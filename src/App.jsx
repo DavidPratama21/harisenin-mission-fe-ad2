@@ -12,7 +12,7 @@ function App() {
       <Routes>
         {/* Layout untuk login dan register */}
         <Route element={<AuthLayout />}>
-          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/Register" element={<Register />} />
         </Route>
 
