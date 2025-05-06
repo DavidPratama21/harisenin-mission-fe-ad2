@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import googleLogo from "../assets/Google_logo.svg";
-import indo from "../assets/IND.svg"
+import googleLogo from "../assets/Svg/Google_logo.svg";
+import indo from "../assets/Svg/IND.svg"
 
 const Register = () => {
   return (

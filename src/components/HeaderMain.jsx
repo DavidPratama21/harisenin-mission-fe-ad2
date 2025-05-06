@@ -1,5 +1,6 @@
 import React from 'react'
-import Logo from '../assets/Logo.svg'
+import Logo from '../assets/Svg/Logo.svg'
+import Profile from "../assets/Profile.png"
 
 const HeaderMain = () => {
   return (
@@ -9,7 +10,7 @@ const HeaderMain = () => {
       {/* Profile */}
       <div className='flex items-center gap-9 font-medium'>
         <p>Kategori</p>
-        <img src="" alt="" className='rounded-xl border w-11 aspect-square' />
+        <img src={Profile} alt="" className='rounded-xl border w-11 aspect-square' />
       </div>
     </div>
   )

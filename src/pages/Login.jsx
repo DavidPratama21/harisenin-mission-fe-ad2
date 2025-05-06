@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import googleLogo from "../assets/Google_logo.svg";
+import googleLogo from "../assets/Svg/Google_logo.svg";
 
 const Login = () => {
   return (
