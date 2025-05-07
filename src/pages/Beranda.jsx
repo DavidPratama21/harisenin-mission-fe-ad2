@@ -20,12 +20,21 @@ import tutor_8 from "../assets/Avatar tutor/8.png"
 
 const Beranda = () => {
   return (
-    <div className="grid mx-auto px-30 py-16 gap-16 w-[1440px]">
+    <div className="grid 
+      text-[14px] sm:text-base font-medium
+      py-7 px-5 gap-6 mx-auto
+      sm:py-16 sm:px-30 sm:gap-16 sm:w-[1440px]
+      "
+    >
       {/* Hero */}
-      <div className="grid gap-6 bg-black/80 relative overflow-hidden
-        pt-[82px] pb-[64px] px-[140px]
-        text-center justify-items-center text-white
-        rounded-xl"
+      <div className="grid justify-items-center 
+        relative overflow-hidden
+        text-center text-white
+        rounded-[10px]
+        bg-black/80 
+        gap-6 py-16 px-5
+        sm:pt-[82px] sm:pb-16 sm:px-[140px]
+        "
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/80 z-1"></div>
@@ -35,19 +44,13 @@ const Beranda = () => {
 
         {/* Title & Desc */}
         <div className="grid gap-3 z-2">
-          <h1 className="font-bold text-5xl">
-            Revolusi Pembelajaran: Temukan Ilmu Baru melalui PLatform Video
-            Interaktif!
-          </h1>
-          <p>
-            Temukan ilmu baru yang menarik dan mendalam melalui koleksi video
-            pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat
-            berpartisipasi dalma latihan interaktif yang akan meningkatkan
-            pemahaman Anda.
-          </p>
+          <h1 className="font-bold text-2xl sm:text-5xl">Revolusi Pembelajaran: Temukan Ilmu Baru melalui PLatform Video Interaktif!</h1>
+          <p className="font-medium">Temukan ilmu baru yang menarik dan mendalam melalui koleksi video pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalma latihan interaktif yang akan meningkatkan pemahaman Anda.</p>
         </div>
+
         <button
-          className="rounded-xl font-bold py-2.5 px-[26px] z-2bg-[#3ecf4c] text-[#e8fde1] 
+          className="rounded-[10px] py-2.5 px-6.5 z-2 
+          bg-[#3ecf4c] text-[#e8fde1] 
           hover:bg-[#e8fde1] hover:text-[#3ecf4c]"
         >
           Temukan Video Course untuk Dipelajari
@@ -55,22 +58,19 @@ const Beranda = () => {
       </div>
 
       {/* Beranda */}
-      <main className="grid gap-8">
+      <main className="grid gap-6 sm:gap-8">
+
         {/* Title & Desc Beranda */}
         <div className="grid gap-2.5">
-          <h1 className="font-bold text-[32px] text-[#222325]">
-            Koleksi Video Pembelajaran Unggulan
-          </h1>
-          <p className="">Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
+          <h1 className="font-semibold sm:font-bold text-2xl sm:text-[32px] text-[#222325]">Koleksi Video Pembelajaran Unggulan</h1>
+          <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
         </div>
 
         {/* Tabs */}
         <div className="flex">
           {/* Tab Semua Kelas */}
           <div className="grid">
-            <span className="text-[#f64920] py-3 pr-9 font-medium">
-              Semua Kelas
-            </span>
+            <span className="text-[#f64920] py-3 pr-9 font-medium">Semua Kelas</span>
             {/* Bar */}
             <span className="h-1.5 w-14 bg-[#f64920] rounded"></span>
           </div>
@@ -86,7 +86,11 @@ const Beranda = () => {
         </div>
 
         {/* Cards */}
-        <div className="flex gap-x-6 gap-y-8 flex-wrap">
+        <div className="flex flex-col mx-auto
+          gap-5 
+          sm:gap-x-6 sm:gap-y-8 sm:flex-row sm:flex-wrap
+          "
+        >
           <Card image={card_1} tutor={tutor_1}/>
           <Card image={card_2} tutor={tutor_2}/>
           <Card image={card_3} tutor={tutor_3}/>
@@ -100,7 +104,10 @@ const Beranda = () => {
       </main>
 
       {/* Banner CTA */}
-      <div className="relative text-white h-[400px] grid place-content-center rounded drop-shadow-[0_12px_45px_-10px_rgba(0,59,222,0.2)] overflow-hidden">
+      <div className="relative grid place-content-center drop-shadow-[0_12px_45px_-10px_rgba(0,59,222,0.2)] 
+        text-white rounded overflow-hidden
+        h-[400px] px-5 "
+      >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/80 z-1"></div>
 
@@ -109,31 +116,32 @@ const Beranda = () => {
 
         {/* Konten */}
         <div className="grid gap-10 justify-center z-2">
+          
           {/* Newsletter */}
           <div className="text-center grid justify-center gap-1">
-            <h3 className="text-[18px] text-[#C1C2C4]">NEWSLETTER</h3>
+            <h3 className="text-base sm:text-[18px] text-[#C1C2C4]">NEWSLETTER</h3>
+            {/* Desc */}
             <div className="grid gap-2.5">
-              <h2 className="text-[32px] font-semibold">
-                Mau Belajar Lebih Banyak?
-              </h2>
-              <p className="text-[#F4F5FA]">
-                Daftarkan dirimu untuk mendapatkan informasi terbaru dan
-                <br />
-                penawaran spesial dari program-program terbaik hariesok.id
-              </p>
+              <h2 className="text-2xl sm:text-[32px] font-semibold">Mau Belajar Lebih Banyak?</h2>
+              <p className="font-normal text-[#F4F5FA]">Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari program-program terbaik hariesok.id</p>
             </div>
           </div>
 
           {/* Input Email */}
-          <div className="py-2 pr-2 pl-8 rounded-[10px] bg-white flex gap-5 justify-between">
+          <div className="
+            grid sm:flex gap-5 sm:justify-between
+            py-2 pr-2 pl-8 rounded-[10px] sm:bg-white "
+          >
             <input
-              className="placeholder-[#333]/68 focus:outline-none text-[#222325]"
+              className="
+                placeholder-[#333]/68 focus:outline-none text-[#222325] bg-white rounded-[10px] 
+                py-2.5 pl-3 pr-2 sm:p-0
+                text-sm text-center font-normal
+                sm:text-base sm:text-left"
               type="text"
               placeholder="Masukkan Emailmu"
             />
-            <button className="rounded-[10px] py-2.5 px-6.5 bg-[#FFBD3A] font-bold">
-              Subscribe
-            </button>
+            <button className="rounded-[10px] py-2.5 px-6.5 bg-[#FFBD3A] font-bold">Subscribe</button>
           </div>
         </div>
       </div>

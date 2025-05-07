@@ -4,95 +4,115 @@ import googleLogo from "../assets/Svg/Google_logo.svg";
 
 const Login = () => {
   return (
-    <div
-      className=" mt-16 w-[590px] p-9 gap-9 m-auto grid justify-center 
-      bg-white text-[16px] text-center 
-      rounded-sm border border-[#f0f0f0] 
-      "
-    >
-      {/* Title */}
-      <div className="grid gap-2.5">
-        <h3 className="text-[32px] font-bold text-[#222325]">Masuk ke Akun</h3>
-        <p className="">Yuk, lanjutin belajarmu di videobelajar.</p>
-      </div>
+    <div className="py-7 px-5 sm:py-16 sm:px-30">
+      {/* Box */}
+      <div
+        className="md:w-[590px] p-5 gap-5 grid mx-auto
+        bg-white text-[14px] text-center
+        rounded-sm border border-[#f1f1f1] 
+        sm:gap-9 sm:p-9"
+      >
+        {/* Title */}
+        <div className="grid gap-2.5">
+          <h3 className="text-[24px] font-semibold text-[#222325] sm:text-[32px]">
+            Masuk ke Akun
+          </h3>
+          <p className="sm:text-[16px]">
+            Yuk, lanjutin belajarmu di videobelajar.
+          </p>
+        </div>
 
-      <div className="grid gap-6">
-        <div className="grid gap-6">
-          {/* Input Email & PW */}
-          <div className="grid gap-4">
-            {/* Email */}
-            <div className="grid">
+        {/* Email, Button Masuk, login with google */}
+        <div className="grid gap-5 sm:gap-6">
+
+          {/* Email & Button Masuk */}
+          <div className="grid gap-6 sm:gap-6">
+
+            {/* Input Email & PW */}
+            <div className="grid gap-3 sm:gap-4">
+
               {/* Email */}
-              <label
-                className="after:content-['*'] after:text-red-500 after:ml-1 justify-self-start"
-                htmlFor=""
-              >
-                E-mail
-              </label>
-              <input
-                className="px-4 py-2.5 border rounded-lg border-[#f0f0f0] "
-                type="email "
-              />
+              <div className="grid">
+                <label
+                  className="
+                    justify-self-start pb-1 pr-4
+                    after:content-['*'] after:text-red-500 after:ml-1 
+                    sm:text-[16px] "
+                  htmlFor=""
+                >
+                  E-mail
+                </label>
+                <input
+                  className="px-2.5 py-3 rounded-[6px] border border-[#3a3541]/12"
+                  type="email "
+                />
+              </div>
+
+              {/* Password */}
+              <div className="grid">
+                <label
+                  className="pb-1 pr-4 after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px"
+                  htmlFor=""
+                >
+                  Kata Sandi
+                </label>
+                <input
+                  className="px-2.5 py-3 rounded-[6px] border border-[#3a3541]/12"
+                  type="text"
+                />
+              </div>
+              {/* Forgot Password */}
+              <a href="" className="justify-self-end font-medium sm:text-[16px]">
+                Lupa Password?
+              </a>
             </div>
-            {/* Password */}
-            <div className="grid">
-              <label
-                className="after:content-['*'] after:text-red-500 after:ml-1 justify-self-start"
-                htmlFor=""
-              >
-                Kata Sandi
-              </label>
-              <input
-                className="px-4 py-2.5 border rounded-lg border-[#f0f0f0]"
-                type="text"
-              />
+
+            {/* Button Masuk & Daftar */}
+            <div className="grid gap-4">
+
+              {/* Button Masuk */}
+              <Link to="/Beranda">
+                <button
+                  className="w-full rounded-xl py-[7px] font-bold
+                  bg-[#3ecf4c] text-[#e8fde1] 
+                  hover:bg-[#e8fde1] hover:text-[#3ecf4c]
+                  "
+                >
+                  Masuk
+                </button>
+              </Link>
+
+              {/* Button Daftar */}
+              <Link to="/Register">
+                <button
+                  className="w-full bg-[#e8fde1] text-[#3ecf4c] rounded-xl py-[7px] font-bold border border-white
+                  hover:bg-white hover:border-[#3ecf4c] hover:border"
+                >
+                  Daftar
+                </button>
+              </Link>
             </div>
-            {/* Forgot Password */}
-            <a href="" className="justify-self-end">
-              Lupa Password?
-            </a>
           </div>
 
-          {/* Button Masuk & Daftar */}
-          <div className="grid gap-4">
-            
-            {/* Button Masuk */}
-            <Link to="/Beranda">
-              <button
-                className="w-[518px] rounded-xl py-[11px] font-bold
-                bg-[#3ecf4c] text-[#e8fde1] 
-                hover:bg-[#e8fde1] hover:text-[#3ecf4c]
-                "
-              >
-                Masuk
-              </button>
-            </Link>
-
-            {/* Button Daftar */}
-            <Link to="/Register">
-              <button
-                className="bg-[#e8fde1] text-[#3ecf4c] w-[518px] rounded-xl py-[11px] font-bold border border-white
-                hover:bg-white hover:border-[#3ecf4c] hover:border"
-              >
-                Daftar
-              </button>
-            </Link>
-
+          {/* Atau */}
+          <div className="flex mx-auto items-center gap-2.5 w-full">
+            <div className="h-0.5 w-full bg-[#f1f1f1] "></div>
+            <p className="text-[#4A505C]">atau</p>
+            <div className="h-0.5 w-full bg-[#f1f1f1] "></div>
           </div>
-        </div>
 
-        {/* Atau */}
-        <div className="flex mx-auto items-center gap-2 w-full">
-          <div className="h-0.5 w-full bg-[#f1f1f1] "></div>
-          atau
-          <div className="h-0.5 w-full bg-[#f1f1f1] "></div>
+          {/* Button Masuk dengan Google */}
+          <button
+            className="
+              h-[34px] w-full mx-auto font-bold py-2 
+              flex items-center justify-center gap-2 
+              border border-[#f1f1f1] rounded-[10px] text-[#4A505C]
+              "
+          >
+            <img className="h-[20px]" src={googleLogo} alt="Google Button" />
+            Masuk dengan Google
+          </button>
         </div>
-
-        {/* Button Masuk dengan Google */}
-        <button className="h-[42px] flex items-center justify-center gap-2 mx-auto border rounded-xl border-[#f0f0f0] w-full font-bold">
-          <img className="h-1/2" src={googleLogo} alt="Google Button" />
-          Masuk dengan Google
-        </button>
       </div>
     </div>
   );
