@@ -20,6 +20,7 @@ import {
     CirclePlay,
     Clock,
 } from "lucide-react";
+import Button from "../components/atoms/Button";
 
 const DetailProduk = () => {
     return (
@@ -51,10 +52,12 @@ const DetailProduk = () => {
                     {/* Frame 1000003868 */}
                     <div className="grid gap-3 text-light-primary">
                         <h1 className="font-semibold text-2xl leading-[140%] tracking-[0.2px] sm:text-[40px]">
-                            Gapai Karier Impuanmu sebagai Seorang UI/UX Designer & Product Manager
+                            Gapai Karier Impuanmu sebagai Seorang UI/UX Designer
+                            & Product Manager
                         </h1>
                         <p className="text-sm font-medium sm:text-base">
-                            Belajar bersama tutor profesional di Video Course. Kapanpun, di manapun.
+                            Belajar bersama tutor profesional di Video Course.
+                            Kapanpun, di manapun.
                         </p>
                     </div>
                     {/* ================================================== */}
@@ -140,7 +143,8 @@ const DetailProduk = () => {
                         {/* Frame 1000004507 */}
                         <div className="grid gap-3 sm:gap-4">
                             <h2 className="font-semibold text-lg leading-[120%] text-dark-primary">
-                                Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
+                                Gapai Karier Impianmu sebagai Seorang UI/UX
+                                Designer & Product Manager.
                             </h2>
                             {/* Frame 1000004502 */}
                             <div className="flex justify-between items-end">
@@ -163,13 +167,7 @@ const DetailProduk = () => {
                             </p>
                         </div>
                         {/* Frame 1000004506 */}
-                        <Link
-                            to="/metode"
-                            className="bg-primary text-center rounded-[10px] py-[7px] px-5.5 font-bold text-sm leading-[140%] tracking-[0.2px] text-light-primary
-                                sm:text-base sm:py-2.5 sm:px-6.5"
-                        >
-                            Beli Sekarang
-                        </Link>
+                        <Button to="/metode">Beli Sekarang</Button>
                         {/* Frame 1000004765 */}
                         <div className="grid gap-3">
                             <p className="font-semibold text-sm leading-[21px] text-dark-primary">
@@ -239,14 +237,27 @@ const DetailProduk = () => {
                     {/* Start Frame 1000004755 */}
                     <div className="grid gap-6 sm:gap-9">
                         {/* Desc & Button (1)*/}
-                        <div
-                            className="grid rounded-[10px] border border-other-border p-5 gap-5 bg-other-primary sm:p-6 sm:gap-6"
-                        >
+                        <div className="grid rounded-[10px] border border-other-border p-5 gap-5 bg-other-primary sm:p-6 sm:gap-6">
                             <p className="font-semibold text-lg leading-[120%] text-dark-primary sm:text-[20px]">
                                 Deskripsi
                             </p>
                             <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary sm:text-base">
-                                Foundations of User Experience (UX) Design adalah yang pertama dari rangkaian tujuh kursus yang akan membekali Anda dengan keterampilan yang dibutuhkan untuk melamar pekerjaan tingkat pemula dalam desain pengalaman pengguna. Desainer UX fokus pada interaksi yang dilakukan orang dengan produk seperti situs web, aplikasi seluler, dan objek fisik. Desainer UX membuat interaksi sehari-hari itu dapat digunakan, menyenangkan, dan dapat diakses. Peran seorang desainer UX tingkat pemula mungkin termasuk berempati dengan pengguna, menentukan poin rasa sakit mereka, memunculkan ide untuk solusi desain, membuat wireframe, prototipe, dan maket, dan menguji desain untuk mendapatkan umpan balik.
+                                Foundations of User Experience (UX) Design
+                                adalah yang pertama dari rangkaian tujuh kursus
+                                yang akan membekali Anda dengan keterampilan
+                                yang dibutuhkan untuk melamar pekerjaan tingkat
+                                pemula dalam desain pengalaman pengguna.
+                                Desainer UX fokus pada interaksi yang dilakukan
+                                orang dengan produk seperti situs web, aplikasi
+                                seluler, dan objek fisik. Desainer UX membuat
+                                interaksi sehari-hari itu dapat digunakan,
+                                menyenangkan, dan dapat diakses. Peran seorang
+                                desainer UX tingkat pemula mungkin termasuk
+                                berempati dengan pengguna, menentukan poin rasa
+                                sakit mereka, memunculkan ide untuk solusi
+                                desain, membuat wireframe, prototipe, dan maket,
+                                dan menguji desain untuk mendapatkan umpan
+                                balik.
                             </p>
                         </div>
                         {/* ================================================== */}
@@ -346,7 +357,9 @@ const DetailProduk = () => {
                                             Introduction to Course 1..
                                         </p>
                                         <p className="hidden font-semibold text-lg leading-[120%] text-primary sm:inline">
-                                            Introduction to Course 1: Foundations of User Experience Design
+                                            Introduction to Course 1:
+                                            Foundations of User Experience
+                                            Design
                                         </p>
                                         <ChevronUp
                                             size={24}
@@ -418,7 +431,8 @@ const DetailProduk = () => {
                                         Universal design, inclusive..
                                     </p>
                                     <p className="hidden font-semibold text-lg leading-[120%] text-primary sm:inline">
-                                        Universal design, inclusive design, and equity-focused design
+                                        Universal design, inclusive design, and
+                                        equity-focused design
                                     </p>
                                     <ChevronDown
                                         size={24}
@@ -473,12 +487,20 @@ const DetailProduk = () => {
                                         />
                                         {/* Title */}
                                         <div className="grid leading-[140%] tracking-[0.2px]">
-                                            <p className="font-medium  text-dark-primary">Gregorius Edrik Lawanto</p>
-                                            <p className="text-dark-secondary text-sm">Alumni Batch 2</p>
+                                            <p className="font-medium  text-dark-primary">
+                                                Gregorius Edrik Lawanto
+                                            </p>
+                                            <p className="text-dark-secondary text-sm">
+                                                Alumni Batch 2
+                                            </p>
                                         </div>
                                     </div>
                                     <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-primary sm:text-base">
-                                        Berkarier di bidang HR selama lebih dari 3 tahun. Saat ini bekerja sebagai Senior Talent Acquisition Specialist di Wings Group Indonesia (Sayap Mas Utama) selama hampir 1 tahun.
+                                        Berkarier di bidang HR selama lebih dari
+                                        3 tahun. Saat ini bekerja sebagai Senior
+                                        Talent Acquisition Specialist di Wings
+                                        Group Indonesia (Sayap Mas Utama) selama
+                                        hampir 1 tahun.
                                     </p>
                                     {/* Frame 1000004495 */}
                                     <div className="flex gap-2">
@@ -564,12 +586,20 @@ const DetailProduk = () => {
                                         />
                                         {/* Title */}
                                         <div className="grid leading-[140%] tracking-[0.2px]">
-                                            <p className="font-medium  text-dark-primary">Gregorius Edrik Lawanto</p>
-                                            <p className="text-dark-secondary text-sm">Alumni Batch 4</p>
+                                            <p className="font-medium  text-dark-primary">
+                                                Gregorius Edrik Lawanto
+                                            </p>
+                                            <p className="text-dark-secondary text-sm">
+                                                Alumni Batch 4
+                                            </p>
                                         </div>
                                     </div>
                                     <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-primary sm:text-base">
-                                        Berkarier di bidang HR selama lebih dari 3 tahun. Saat ini bekerja sebagai Senior Talent Acquisition Specialist di Wings Group Indonesia (Sayap Mas Utama) selama hampir 1 tahun.
+                                        Berkarier di bidang HR selama lebih dari
+                                        3 tahun. Saat ini bekerja sebagai Senior
+                                        Talent Acquisition Specialist di Wings
+                                        Group Indonesia (Sayap Mas Utama) selama
+                                        hampir 1 tahun.
                                     </p>
                                     {/* Frame 1000004495 */}
                                     <div className="flex gap-2">
@@ -658,7 +688,9 @@ const DetailProduk = () => {
                             Video Pembelajaran Terkait Lainnya
                         </h1>
                         <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary sm:text-base">
-                            Ekspansi Pengetahuan Anda dengan Rekomendasi Spesial Kami!Ekspansi Pengetahuan Anda dengan Rekomendasi Spesial Kami!
+                            Ekspansi Pengetahuan Anda dengan Rekomendasi Spesial
+                            Kami!Ekspansi Pengetahuan Anda dengan Rekomendasi
+                            Spesial Kami!
                         </p>
                     </div>
                     {/* Frame 1000003842 */}

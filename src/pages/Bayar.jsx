@@ -11,9 +11,9 @@ import {
     FileBadge,
     Globe,
     ChevronDown,
-    CircleCheck,
 } from "lucide-react";
 import { Link } from "react-router";
+import Button from "../components/atoms/Button";
 const Bayar = () => {
     return (
         <>
@@ -186,19 +186,11 @@ const Bayar = () => {
                                 {/* Frame 4767 */}
                                 <div className="grid gap-4 text-center sm:flex">
                                     {/* Ganti Metode */}
-                                    <Link
-                                        to="/ubahMetode"
-                                        className="rounded-[10px] border border-primary py-[7px] px-5.5 text-primary font-bold text-sm leading-[140%] tracking-[0.2px] sm:py-2.5 sm:px-6.5 sm:text-base sm:w-full sm:flex sm:place-content-center "
-                                    >
+                                    <Button to="/ubahMetode" reverse="yes" className="border border-primary">
                                         Ganti Metode Pembayaran
-                                    </Link>
+                                    </Button>
                                     {/* Beli skrg */}
-                                    <Link
-                                        to="/selesai"
-                                        className="rounded-[10px] bg-primary py-[7px] px-5.5 text-light-primary font-bold text-sm leading-[140%] tracking-[0.2px] sm:py-2.5 sm:px-6.5 sm:text-base sm:w-full sm:flex sm:place-content-center"
-                                    >
-                                        Beli Sekarang
-                                    </Link>
+                                    <Button to="/selesai">Beli Sekarang</Button>
                                 </div>
                             </div>
                             {/* Desc & Button (3), Tata Cara */}
@@ -216,7 +208,7 @@ const Bayar = () => {
                                             </p>
                                             <ChevronDown color="#333333AD" />
                                         </div>
-                                    {/* <ol className="list-decimal pl-5 sm:text-lg">
+                                        {/* <ol className="list-decimal pl-5 sm:text-lg">
                                             <li>Masukkan kartu ATM dan PIN BCA Anda</li>
                                             <li>Di menu utama, pilih "Transaksi Lainnya". Pilih "Transfer". Pilih "Ke BCA Virtual Account"</li>
                                             <li>Masukkan nomor Virtual Account</li>

@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, LogOut } from "lucide-react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router";
+import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Footer from "../components/organisems/Footer";
-import Logo from "../components/atoms/Logo";
+import Divider from "../components/atoms/Divider"
+import Button from "../components/atoms/Button"
 import Profile from "../assets/Profile.png";
-
-const Profil_layout = ({ children }) => {
+const Video_layout = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [isProgressOpen, setIsProgressOpen] = useState(false);
     const dropDownRef = useRef(null);
 
     useEffect(() => {
@@ -19,6 +19,12 @@ const Profil_layout = ({ children }) => {
                 !dropDownRef.current.contains(e.target)
             ) {
                 setIsProfileOpen(false);
+            }
+            if (
+                dropDownRef.current &&
+                !dropDownRef.current.contains(e.target)
+            ) {
+                setIsProgressOpen(false);
             }
         };
 
@@ -30,17 +36,29 @@ const Profil_layout = ({ children }) => {
     return (
         <div>
             <Header>
-                <Logo />
-                {/* Kategori */}
-                <Link
-                    to="/kategori"
-                    className="hidden font-semibold leading-[140%] tracking-[0.2px] text-dark-secondary sm:inline"
-                >
-                    Kategori
-                </Link>
+                {/* Back Btn */}
+                <div className="flex gap-2.5 items-center">
+                    <div className="text-dark-secondary">
+                        <ArrowLeft />
+                    </div>
+                    <p className="font-medium text-sm leading-[140%] tracking-[0.2px] text-dark-primary truncate w-25">
+                        Foundations of User Experience Design
+                    </p>
+                </div>
+                {/* Progress video */}
+                <button 
+                    onClick={() => setIsProgressOpen(!isProgressOpen)}
+                    className="flex gap-2 items-center text-primary mr-6">
+                    <p className="font-bold leading-[140%] tracking-[0.2px]">
+                        10/12
+                    </p>
+                    <ChevronDown />
+                </button>
+                {/* Hum / Profile */}
                 {isMobile ? (
                     <Menu
                         color="#4A505C"
+                        className="sm:hidden"
                         onClick={() => setIsProfileOpen(!isProfileOpen)}
                     />
                 ) : (
@@ -48,7 +66,7 @@ const Profil_layout = ({ children }) => {
                         <img
                             src={Profile}
                             alt="Profile picture"
-                            className="w-11 rounded-[10px]"
+                            className="w-11 rounded-[10px] hidden sm:inline"
                         />
                     </button>
                 )}
@@ -57,7 +75,7 @@ const Profil_layout = ({ children }) => {
                 // Drop Down Menu
                 <div
                     ref={dropDownRef}
-                    className="rounded-b fixed z-2 w-full top-16 sm:right-30 sm:w-[220px] bg-white shadow-[0_0_1px_0_rgba(62,67,74,0.31),0_18px_28px_0_rgba(62,67,74,0.15)]"
+                    className="rounded-b fixed z-2 w-full top-14 sm:right-30 sm:w-[220px] bg-white shadow-[0_0_1px_0_rgba(62,67,74,0.31),0_18px_28px_0_rgba(62,67,74,0.15)]"
                 >
                     <Link
                         to="/kategori"
@@ -92,10 +110,17 @@ const Profil_layout = ({ children }) => {
                     </Link>
                 </div>
             )}
+            {isProgressOpen && (
+                <div className="absolute top-14 z-1 w-80 shadow-[0_12px_25px_-10px_rgba(61,61,61,0.15)] grid p-6 gap-3 rounded bg-other-primary">
+                    <p className="font-semibold leading-[120%] text-dark-primary">25% Modul Telah Selesai</p>
+                    <Divider />
+                    <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary">Selesaikan Semua Modul Untuk Mendapatkan Sertifikat</p>
+                    <Button>Ambil Sertifikat</Button>
+                </div>
+            )}
             {children}
-            <Footer />
         </div>
     );
 };
 
-export default Profil_layout;
+export default Video_layout;

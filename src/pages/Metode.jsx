@@ -1,6 +1,6 @@
 import Metode_layout from "../layouts/Metode_layout";
 import Stepper from "../components/molecules/Stepper";
-import { Link } from "react-router";
+import Button from "../components/atoms/Button";
 import {
     BookCheck,
     FileText,
@@ -22,7 +22,7 @@ import Shopee_pay from "../assets/E-wallet/shopee_pay.png";
 import Master from "../assets/Banks/master.png";
 import Visa from "../assets/Banks/visa.png";
 import Jcb from "../assets/Banks/jcb.png";
-import Image from "../assets/Card_images/card_1.jpg"
+import Image from "../assets/Card_images/card_1.jpg";
 
 const Metode = () => {
     return (
@@ -36,9 +36,14 @@ const Metode = () => {
                 <div className="grid rounded-[10px] border border-other-border p-5 gap-5 bg-other-primary sm:order-1 sm:h-fit sm:p-6 sm:gap-6 sm:max-w-91.5">
                     {/* Frame 4507 */}
                     <div className="grid gap-3 sm:gap-4">
-                        <img src={Image} alt="Image Gapai Karier" className="rounded-[10px] hidden sm:inline"/>
+                        <img
+                            src={Image}
+                            alt="Image Gapai Karier"
+                            className="rounded-[10px] hidden sm:inline"
+                        />
                         <h2 className="font-semibold text-lg leading-[120%] text-dark-primary">
-                            Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
+                            Gapai Karier Impianmu sebagai Seorang UI/UX Designer
+                            & Product Manager.
                         </h2>
                         {/* Frame 4502 */}
                         <div className="flex justify-between items-end">
@@ -292,7 +297,8 @@ const Metode = () => {
                         {/* Frame 3884 */}
                         <div className="flex gap-6 leading-[140%] tracking-[0.2px] text-dark-secondary sm:text-lg">
                             <p>
-                                Video Learning: Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
+                                Video Learning: Gapai Karier Impianmu sebagai
+                                Seorang UI/UX Designer & Product Manager.
                             </p>
                             <p className="font-bold">Rp 767.500</p>
                         </div>
@@ -311,9 +317,7 @@ const Metode = () => {
                                 Rp 7.000
                             </p>
                         </div>
-                        <Link to="/bayar" className="rounded-[10px] bg-primary py-[7px] px-5.5 text-light-primary font-bold text-sm leading-[140%] tracking-[0.2px] sm:py-2.5 sm:px-6.5 sm:text-base">
-                            Beli Sekarang
-                        </Link>
+                        <Button to="/bayar">Beli Sekarang</Button>
                     </div>
                 </div>
             </div>

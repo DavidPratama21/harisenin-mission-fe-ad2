@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Menu, LogOut } from "lucide-react";
 import { Link } from "react-router";
-import Header from "../components/headers/Header_beranda";
+import Header from "../components/organisems/Header";
 import Footer from "../components/organisems/Footer";
+import Logo from "../components/atoms/Logo";
 import Profile from "../assets/Profile.png";
 
 const Kelas_layout = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const dropDownRef = useRef(null);
 
@@ -27,25 +30,28 @@ const Kelas_layout = ({ children }) => {
     return (
         <div>
             <Header>
-                <Menu
-                    color="#4A505C"
-                    className="sm:hidden"
-                    onClick={() => setIsProfileOpen(!isProfileOpen)}
-                />
+                <Logo />
+                {/* Kategori */}
                 <Link
                     to="/kategori"
                     className="hidden font-semibold leading-[140%] tracking-[0.2px] text-dark-secondary sm:inline"
                 >
                     Kategori
                 </Link>
-
-                <button onClick={() => setIsProfileOpen(!isProfileOpen)}>
-                    <img
-                        src={Profile}
-                        alt="Profile picture"
-                        className="w-11 rounded-[10px] hidden  sm:inline"
+                {isMobile ? (
+                    <Menu
+                        color="#4A505C"
+                        onClick={() => setIsProfileOpen(!isProfileOpen)}
                     />
-                </button>
+                ) : (
+                    <button onClick={() => setIsProfileOpen(!isProfileOpen)}>
+                        <img
+                            src={Profile}
+                            alt="Profile picture"
+                            className="w-11 rounded-[10px]"
+                        />
+                    </button>
+                )}
             </Header>
             {isProfileOpen && (
                 // Drop Down Menu

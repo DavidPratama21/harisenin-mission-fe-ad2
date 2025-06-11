@@ -11,6 +11,7 @@ import Selesai from "../pages/Selesai";
 import Pesanan from "../pages/Pesanan";
 import Kelas from "../pages/Kelas";
 import Profil from "../pages/Profil";
+import Video from "../pages/Video";
 
 export const router = createBrowserRouter([
     {
@@ -60,5 +61,9 @@ export const router = createBrowserRouter([
     {
         path: "/profil",
         element: <Profil />,
+    },
+    {
+        path: "/video",
+        element: <Video />,
     },
 ]);

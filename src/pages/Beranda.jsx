@@ -18,6 +18,8 @@ import tutor_7 from "../assets/Avatar_tutor/7.png";
 import tutor_8 from "../assets/Avatar_tutor/8.png";
 import Beranda_layout from "../layouts/Beranda_layout";
 import Tabs from "../components/molecules/Tabs";
+import Hero from "../components/molecules/Hero";
+import Title_desc from "../components/molecules/Title_desc";
 
 const Beranda = () => {
     return (
@@ -25,39 +27,12 @@ const Beranda = () => {
             <Beranda_layout>
                 <div className="relative top-16 mb-16 grid py-7 px-5 gap-6 mx-auto sm:py-16 sm:px-30 sm:gap-16 sm:w-[1440px]">
                     {/* Frame 1000003861, Hero */}
-                    <div className="grid rounded-[10px] py-16 px-5 gap-6 bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('./src/assets/Hero_bg.jpg')] bg-center bg-cover justify-items-center text-center text-light-primary   sm:pt-20.5 sm:pb-16 sm:px-35">
-                        {/* Frame 1000003868, Title & Desc */}
-                        <div className="grid gap-3">
-                            <h1 className="font-bold text-2xl leading-[110%] sm:text-5xl">
-                                Revolusi Pembelajaran: Temukan Ilmu Baru melalui
-                                PLatform Video Interaktif!
-                            </h1>
-                            <p className="font-medium leading-[140%] tracking-[0.2px] text-sm sm:text-base">
-                                Temukan ilmu baru yang menarik dan mendalam
-                                melalui koleksi video pembelajaran berkualitas
-                                tinggi. Tidak hanya itu, Anda juga dapat
-                                berpartisipasi dalam latihan interaktif yang
-                                akan meningkatkan pemahaman Anda.
-                            </p>
-                        </div>
-
-                        {/* Button */}
-                        <button className="rounded-[10px] text-sm py-2.5 px-6.5 bg-primary text-light-primary leading-[140%] tracking-[0.2px] sm:text-base sm:font-bold hover:bg-primary-100 hover:text-primary">
-                            Temukan Video Course untuk Dipelajari!
-                        </button>
-                    </div>
+                    <Hero />
 
                     {/* Card Section */}
                     <main className="grid gap-6 sm:gap-8">
                         {/* Frame 1000003692, Title & Desc Beranda */}
-                        <div className="grid gap-2.5">
-                            <h1 className=" font-semibold text-2xl text-dark-primary leading-[110%] sm:text-[32px] sm:font-bold">
-                                Koleksi Video Pembelajaran Unggulan
-                            </h1>
-                            <p className="font-medium text-dark-secondary text-sm leading-[140%] tracking-[0.2px] sm:text-base">
-                                Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!
-                            </p>
-                        </div>
+                        <Title_desc />
 
                         {/* Tabs */}
                         <Tabs />

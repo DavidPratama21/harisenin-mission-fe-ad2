@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, LogOut } from "lucide-react";
 import { Link } from "react-router";
-import Header from "../components/headers/Header_metode_pembayaran";
+import { Menu, LogOut } from "lucide-react";
+import Header from "../components/organisems/Header";
+import Footer from "../components/organisems/Footer";
+import Stepper from "../components/molecules/Stepper"
+import Logo from "../components/atoms/Logo";
 
 const UbahMetodePembayaran_layout = ({ children }) => {
     const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -25,6 +28,10 @@ const UbahMetodePembayaran_layout = ({ children }) => {
     return (
         <div>
             <Header>
+                <Logo />
+                <div className="hidden sm:inline">
+                    <Stepper />
+                </div>
                 <Menu
                     color="#4A505C"
                     className="sm:hidden"
@@ -71,6 +78,9 @@ const UbahMetodePembayaran_layout = ({ children }) => {
                 </div>
             )}
             {children}
+            <div className="sm:hidden">
+                <Footer />
+            </div>
         </div>
     );
 };

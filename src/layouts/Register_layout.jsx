@@ -1,7 +1,7 @@
 import Header from "../components/organisems/Header";
 import Logo from "../components/atoms/Logo";
 
-const Login_layout = ({children}) => {
+const Register_layout = ({children}) => {
   return (
     <div>
       <Header>
@@ -12,4 +12,4 @@ const Login_layout = ({children}) => {
   );
 };
 
-export default Login_layout;
+export default Register_layout;

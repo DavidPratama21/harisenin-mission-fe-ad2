@@ -2,6 +2,7 @@ import Selesai_layout from "../layouts/Selesai_layout";
 import Stepper from "../components/molecules/Stepper";
 import Done from "../assets/Done_payment.svg";
 import { Link } from "react-router";
+import Button from "../components/atoms/Button";
 
 const Selesai = () => {
     return (
@@ -25,15 +26,11 @@ const Selesai = () => {
                                 Pembayaran Berhasil!
                             </p>
                             <p className="leading-[140%] tracking-[0.2px] text-dark-secondary">
-                                Silakan cek email kamu untuk informasi lebih lanjut. Hubungi kami jika ada kendala.
+                                Silakan cek email kamu untuk informasi lebih
+                                lanjut. Hubungi kami jika ada kendala.
                             </p>
                         </div>
-                        <Link
-                            to="/pesanan"
-                            className="h-11.5 py-2.5 px-6.5 rounded-[10px] bg-primary text-light-primary font-bold"
-                        >
-                            Lihat Detail Pesanan
-                        </Link>
+                        <Button to="/pesanan">Lihat Detail Pesanan</Button>
                     </div>
                 </div>
             </div>

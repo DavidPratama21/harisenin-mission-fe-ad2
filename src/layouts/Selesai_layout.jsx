@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, LogOut } from "lucide-react";
 import { Link } from "react-router";
-import Header from "../components/headers/Header_metode_pembayaran";
+import Header from "../components/organisems/Header";
+import Stepper from "../components/molecules/Stepper";
+import Logo from "../components/atoms/Logo";
 
 const Selesai_layout = ({ children }) => {
     const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -25,6 +27,10 @@ const Selesai_layout = ({ children }) => {
     return (
         <div>
             <Header>
+                <Logo />
+                <div className="hidden sm:inline">
+                    <Stepper />
+                </div>
                 <Menu
                     color="#4A505C"
                     className="sm:hidden"
