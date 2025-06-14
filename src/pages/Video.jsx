@@ -3,43 +3,45 @@ import {
     ChevronRight,
     ChevronUp,
     ChevronDown,
-    Star
+    Star,
 } from "lucide-react";
 import Video_layout from "../layouts/Video_layout";
 import Video_section from "../components/molecules/Video_section";
+import Video_play from "../components/molecules/Video_play";
 import avatar from "../assets/Avatar_tutor/1.png";
 
 const Video = () => {
     return (
         <Video_layout>
             {/* 3752 */}
-            <div className="relative top-16 mb-16 grid bg-other-primary">
+            <div className="relative top-14 grid bg-other-primary sm:grid-cols-[auto_auto]">
                 {/* 4793 */}
-                <>
+                <div className="grid w-full h-fit">
                     {/* Video */}
+                    <Video_play />
                     {/* 4794 */}
-                    <div className="grid p-5 gap-5">
+                    <div className="grid p-5 gap-5 sm:py-9 sm:px-28 sm:gap-6">
                         {/* 3692 */}
-                        <div className="grid gap-2.5">
-                            <p className="font-semibold text-lg leading-[120%] text-dark-primary">
+                        <div className="grid gap-2.5 sm:gap-3">
+                            <p className="font-semibold text-lg leading-[120%] text-dark-primary sm:text-xl">
                                 Praktikkan Skill dengan Technical Book
                             </p>
-                            <p className="leading-[140%] tracking-[0.2px] text-dark-secondary">
+                            <p className="leading-[140%] tracking-[0.2px] text-dark-secondary sm:text-lg">
                                 Pelajari dan praktikkan skill teknis dalam
                                 berbagai industri dengan Technical Book
                                 Riselearn
                             </p>
                         </div>
                         {/* 4497 */}
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 sm:gap-2.5 items-center">
                             <img
                                 src={avatar}
                                 alt=""
-                                className="size-9 rounded-[10px]"
+                                className="size-9 rounded-[10px] sm:size-10"
                             />
                             {/* title */}
                             <div className="grid leading-[140%] tracking-[0.2px]">
-                                <p className="font-medium text-sm text-dark-primary">
+                                <p className="font-medium text-sm text-dark-primary sm:text-base">
                                     Jenna Ortega
                                 </p>
                                 <div className="flex gap-1 text-xs text-dark-secondary sm:text-sm">
@@ -123,39 +125,37 @@ const Video = () => {
                             </p>
                         </div>
                     </div>
-                </>
+                </div>
                 {/* Navigation */}
-                <div className="flex justify-between py-4 px-3 bg-primary border-t border-other-border items-center">
+                <div className="flex justify-between py-4 px-3 text-sm font-bold text-light-primary leading-[140%] tracking-[0.2px] bg-primary border-t border-other-border items-center sm:order-last sm:col-span-full sm:text-lg sm:py-4.5 sm:px-9">
                     {/* Sebelumnya */}
-                    <div className="flex gap-2.5 text-light-primary items-center">
+                    <div className="flex gap-2.5 items-center sm:gap-4">
                         <ChevronLeft />
-                        <p className="font-bold text-sm leading-[140%] tracking-[0.2px]">
-                            Sebelumnya
-                        </p>
+                        <p className="sm:hidden">Sebelumnya</p>
+                        <p className="hidden sm:inline">Foundations of user Experience Design</p>
                     </div>
                     {/* Selanjutnya */}
-                    <div className="flex gap-2.5 text-light-primary items-center">
-                        <p className="font-bold text-sm leading-[140%] tracking-[0.2px]">
-                            Selanjutnya
-                        </p>
+                    <div className="flex gap-2.5 items-center sm:gap-4">
+                        <p className="sm:hidden">Selanjutnya</p>
+                        <p className="hidden sm:inline">Foundations of user Experience Design</p>
                         <ChevronRight />
                     </div>
                 </div>
                 {/* 4797 */}
-                <div className="border-t border-other-border">
+                <div className="border-t border-other-border sm:w-full">
                     {/* 3084 */}
-                    <div className="flex gap-31 pt-6 pb-5 pl-5 pr-8.5 border-b border-other-border">
-                        <p className="font-semibold leading-[120%] text-dark-primary">
+                    <div className="flex gap-31 pt-6 pb-5 pl-5 pr-8.5 border-b border-other-border sm:pl-7.5">
+                        <p className="font-semibold leading-[120%] text-dark-primary sm:text-lg">
                             Daftar Modul
                         </p>
                     </div>
                     {/* Desc & Button */}
-                    <div className="grid gap-5 p-5">
+                    <div className="grid gap-5 p-5 sm:py-6 sm:px-9 sm:gap-6">
                         {/* 4761 */}
                         <div className="grid gap-3">
                             {/* Intro */}
                             <div className="flex items-center justify-between text-dark-secondary">
-                                <p className="font-semibold leading-[120%] text-dark-primary">
+                                <p className="font-semibold leading-[120%] text-dark-primary sm:text-lg">
                                     Introduction to HR
                                 </p>
                                 <ChevronUp />
@@ -175,7 +175,7 @@ const Video = () => {
                         <div className="grid gap-3">
                             {/* Intro */}
                             <div className="flex items-center justify-between text-dark-secondary">
-                                <p className="font-semibold leading-[120%] text-dark-primary">
+                                <p className="font-semibold leading-[120%] text-dark-primary sm:text-lg">
                                     Introduction to HR
                                 </p>
                                 <ChevronDown />
@@ -185,7 +185,7 @@ const Video = () => {
                         <div className="grid gap-3">
                             {/* Intro */}
                             <div className="flex items-center justify-between text-dark-secondary">
-                                <p className="font-semibold leading-[120%] text-dark-primary">
+                                <p className="font-semibold leading-[120%] text-dark-primary sm:text-lg">
                                     Introduction to HR
                                 </p>
                                 <ChevronDown />
@@ -194,8 +194,10 @@ const Video = () => {
                     </div>
                     {/* 3103 */}
                     <div className="flex gap-2 py-4 px-9 items-center border-t border-other-border bg-secondary text-light-primary">
-                        <Star/>
-                        <p className="font-bold leading-[24px] tracking-[0.2%]">Beri Review & Rating</p>
+                        <Star size={20} />
+                        <p className="font-bold leading-[24px] tracking-[0.2%]">
+                            Beri Review & Rating
+                        </p>
                     </div>
                 </div>
             </div>

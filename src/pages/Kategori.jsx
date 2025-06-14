@@ -1,6 +1,6 @@
 import Kategori_layout from "../layouts/Kategori_layout";
 import Card from "../components/molecules/Card";
-import Filter from "../components/molecules/Filter";
+import Filter from "../components/molecules/Filter copy";
 import Pagination from "../components/molecules/Pagination";
 import {
     BookText,

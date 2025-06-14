@@ -41,7 +41,7 @@ const Video_layout = ({ children }) => {
                     <div className="text-dark-secondary">
                         <ArrowLeft />
                     </div>
-                    <p className="font-medium text-sm leading-[140%] tracking-[0.2px] text-dark-primary truncate w-25">
+                    <p className="font-medium text-sm leading-[140%] tracking-[0.2px] text-dark-primary truncate w-25 sm:text-base sm:w-fit">
                         Foundations of User Experience Design
                     </p>
                 </div>
@@ -49,6 +49,10 @@ const Video_layout = ({ children }) => {
                 <button 
                     onClick={() => setIsProgressOpen(!isProgressOpen)}
                     className="flex gap-2 items-center text-primary mr-6">
+                    {/* Bar Progress */}
+                    <span className="flex gap-2.5 rounded-[10px] bg-secondary-100 w-36.5">
+                        <span className="rounded-[20px] bg-secondary w-28 h-3"></span>
+                    </span>
                     <p className="font-bold leading-[140%] tracking-[0.2px]">
                         10/12
                     </p>
@@ -111,11 +115,11 @@ const Video_layout = ({ children }) => {
                 </div>
             )}
             {isProgressOpen && (
-                <div className="absolute top-14 z-1 w-80 shadow-[0_12px_25px_-10px_rgba(61,61,61,0.15)] grid p-6 gap-3 rounded bg-other-primary">
+                <div className="absolute top-14 right-15 z-1 w-80 shadow-[0_12px_25px_-10px_rgba(61,61,61,0.15)] grid p-6 gap-3 rounded bg-other-primary">
                     <p className="font-semibold leading-[120%] text-dark-primary">25% Modul Telah Selesai</p>
                     <Divider />
                     <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary">Selesaikan Semua Modul Untuk Mendapatkan Sertifikat</p>
-                    <Button>Ambil Sertifikat</Button>
+                    <Button type="disabled">Ambil Sertifikat</Button>
                 </div>
             )}
             {children}
