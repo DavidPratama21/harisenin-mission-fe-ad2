@@ -1,9 +1,11 @@
 import { Search } from "lucide-react";
 import Kelas_layout from "../layouts/Kelas_layout";
-import Tabs from "../components/molecules/Tabs_kelas";
+import Tabs from "../components/molecules/Tabs";
 import Card from "../components/molecules/Card_kelas";
 import Pagination from "../components/molecules/Pagination";
 import Menu_daftar from "../components/molecules/Menu_daftar";
+
+const TabsList = ["Semua Kelas", "Sedang Berjalan", "Selesai"];
 
 const Kelas = () => {
     return (
@@ -27,7 +29,7 @@ const Kelas = () => {
                 {/* Desc & Button */}
                 <div className="grid p-5 gap-6 border border-other-border bg-other-primary rounded-[10px] sm:w-full sm:gap-8">
                     <div className="grid gap-6 sm:flex sm:gap-8 sm:justify-between sm:items-center">
-                        <Tabs />
+                        <Tabs TabsList={TabsList} />
                         <button className="grid h-12 px-3 rounded-[10px] border border-other-border bg-white text-dark-secondary sm:w-[220px]">
                             <div className="flex items-center gap-2 py-3 pl-[5px] sm:justify-between">
                                 <p className="font-medium">Cari Kelas</p>
@@ -35,9 +37,9 @@ const Kelas = () => {
                             </div>
                         </button>
                     </div>
-                    <Card/>
-                    <Card status="otw"/>
-                    <Card status="otw"/>
+                    <Card />
+                    <Card status="otw" />
+                    <Card status="otw" />
                     <Pagination />
                 </div>
             </div>

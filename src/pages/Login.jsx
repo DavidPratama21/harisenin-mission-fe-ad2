@@ -1,9 +1,48 @@
-import { Link } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import GoogleLogo from "../assets/Google_logo.svg";
 import Button from "../components/atoms/Button";
 import Login_layout from "../layouts/Login_layout";
+import { Users } from "../data/Users";
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    // ambil data dari input form
+    const [getEmail, setGetEmail] = useState("");
+    const [getPassword, setGetPassword] = useState("");
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const cek_users_LS = localStorage.getItem("users");
+        // kalo LS nya kosong, isiin dari DB ke LS
+        if (!cek_users_LS) {
+            localStorage.setItem("users", JSON.stringify(Users));
+        }
+        // Ambil dari localStorage
+        const usersParse = JSON.parse(localStorage.getItem("users") || []);
+        setUsers(usersParse);
+    }, []);
+
+    // Find user dengan email yg sama dgn input form & cek pwnya juga
+    const user = users.find(
+        (user) => user.email === getEmail && user.password === getPassword
+    );
+
+    // Proses Login dari Local
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (user) {
+            localStorage.setItem("Login", true);
+            localStorage.setItem("Lagi Login", JSON.stringify(user));
+            alert("Login Success");
+            navigate("/");
+        } else {
+            alert("Login Gagal");
+        }
+    };
+
     return (
         <Login_layout>
             <div className="relative top-16 mb-16 py-7 px-5 bg-[#FFFDF3] sm:py-16 sm:px-30">
@@ -20,60 +59,74 @@ const Login = () => {
                     </div>
 
                     {/* 4406, Email, Button Masuk, login with google */}
-                    <form action="" method="" className="grid gap-5 sm:gap-6">
-                        {/* Frame 1000004405, Email & Button Masuk */}
-                        <div className="grid gap-6 sm:gap-6">
-                            {/* Frame 1000004403, Input Email & PW */}
-                            <div className="grid gap-3 sm:gap-4 text-dark-secondary">
-                                {/* Email */}
-                                <div className="grid">
-                                    <label
-                                        htmlFor=""
-                                        className="justify-self-start pb-1 pr-4 after:content-['*'] after:text-red-500 after:ml-1 sm:text-[16px] "
-                                    >
-                                        E-mail
-                                    </label>
-                                    <input
-                                        type="email"
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
-                                </div>
+                    <div className="grid gap-5 sm:gap-6">
+                        {/* Form exclude Regis BTN */}
+                        <div className="grid gap-4">
+                            {/* 4405, Email & Button Masuk */}
+                            <form
+                                onSubmit={handleLogin}
+                                action=""
+                                method=""
+                                className="grid gap-6 sm:gap-6"
+                            >
+                                {/* 4403, Input Email & PW */}
+                                <div className="grid gap-3 sm:gap-4 text-dark-secondary">
+                                    {/* Email */}
+                                    <div className="grid">
+                                        <label
+                                            htmlFor=""
+                                            className="justify-self-start pb-1 pr-4 after:content-['*'] after:text-red-500 after:ml-1 sm:text-[16px] "
+                                        >
+                                            E-mail
+                                        </label>
+                                        <input
+                                            required
+                                            type="email"
+                                            onChange={(e) =>
+                                                setGetEmail(e.target.value)
+                                            }
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
+                                        />
+                                    </div>
 
-                                {/* Password */}
-                                <div className="grid">
-                                    <label
-                                        htmlFor=""
-                                        className="pb-1 pr-4 after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px"
+                                    {/* Password */}
+                                    <div className="grid">
+                                        <label
+                                            htmlFor=""
+                                            className="pb-1 pr-4 after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px"
+                                        >
+                                            Kata Sandi
+                                        </label>
+                                        <input
+                                            required
+                                            type="password"
+                                            onChange={(e) =>
+                                                setGetPassword(e.target.value)
+                                            }
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
+                                        />
+                                    </div>
+                                    {/* Forgot Password */}
+                                    <a
+                                        href=""
+                                        className="justify-self-end font-medium sm:text-[16px]"
                                     >
-                                        Kata Sandi
-                                    </label>
-                                    <input
-                                        type="password"
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
+                                        Lupa Password?
+                                    </a>
                                 </div>
-                                {/* Forgot Password */}
-                                <a
-                                    href=""
-                                    className="justify-self-end font-medium sm:text-[16px]"
-                                >
-                                    Lupa Password?
-                                </a>
-                            </div>
-
-                            {/* Frame 1000004809, Button Masuk & Daftar */}
-                            <div className="grid gap-4">
                                 {/* Button Masuk */}
-                                <Button to="/Beranda">Masuk</Button>
-
-                                {/* Button Daftar */}
-                                <Button to="/register" reverse="yes">
-                                    Daftar
-                                </Button>
-                            </div>
+                                <Button type="submit">Masuk</Button>
+                            </form>
+                            {/* Button Daftar */}
+                            <Button
+                                type="button"
+                                style="reverse"
+                                action={() => navigate("/register")}
+                            >
+                                Daftar
+                            </Button>
                         </div>
-
-                        {/*Frame 1000004407, Atau */}
+                        {/* 4407, Atau */}
                         <div className="flex mx-auto items-center gap-2.5 w-full">
                             <div className="h-0.5 w-full bg-other-border "></div>
                             {/* Frame 1000004408 */}
@@ -94,7 +147,7 @@ const Login = () => {
                                 </p>
                             </div>
                         </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </Login_layout>

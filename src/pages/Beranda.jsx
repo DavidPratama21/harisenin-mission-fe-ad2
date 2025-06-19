@@ -20,24 +20,34 @@ import Beranda_layout from "../layouts/Beranda_layout";
 import Tabs from "../components/molecules/Tabs";
 import Hero from "../components/molecules/Hero";
 import Title_desc from "../components/molecules/Title_desc";
+import { Videos } from "../data/Videos";
+import { Tutors } from "../data/Tutors";
+
+const TabsList = [
+    "Semua Kelas",
+    "Pemasaran",
+    "Desain",
+    "Pengembangan Diri",
+    "Bisnis",
+];
 
 const Beranda = () => {
     return (
         <>
             <Beranda_layout>
                 <div className="relative top-16 mb-16 grid py-7 px-5 gap-6 mx-auto sm:py-16 sm:px-30 sm:gap-16 sm:w-[1440px]">
-                    {/* Frame 1000003861, Hero */}
+                    {/* 3861, Hero */}
                     <Hero />
 
                     {/* Card Section */}
                     <main className="grid gap-6 sm:gap-8">
-                        {/* Frame 1000003692, Title & Desc Beranda */}
+                        {/* 3692, Title & Desc Beranda */}
                         <Title_desc />
 
                         {/* Tabs */}
-                        <Tabs />
+                        <Tabs TabsList={TabsList} />
 
-                        {/* Frame 1000003837, 3841, 3842, Cards */}
+                        {/* 3837, 3841, 3842, Cards */}
                         <div className="flex flex-col mx-auto gap-5 sm:gap-x-6 sm:gap-y-8 sm:flex-row sm:flex-wrap">
                             <Card image={card_1} tutor={tutor_1} />
                             <Card image={card_2} tutor={tutor_2} />
@@ -53,7 +63,7 @@ const Beranda = () => {
 
                     {/* Banner CTA */}
                     <div className="grid h-[400px] px-5 rounded drop-shadow-[0_12px_45px_-10px_rgba(0,59,222,0.2)] bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('./src/assets/CTA_bg.jpg')] bg-center bg-cover place-content-center">
-                        {/* Frame 1000003756, Konten */}
+                        {/* 3756, Konten */}
                         <div className="grid gap-10">
                             {/* Newsletter */}
                             <div className="text-center grid gap-1">
@@ -73,9 +83,9 @@ const Beranda = () => {
                                 </div>
                             </div>
 
-                            {/* Frame 1000004812, Input Email */}
+                            {/* 4812, Input Email */}
                             <div className="grid gap-4 sm:flex sm:justify-between sm:bg-white sm:gap-5 sm:py-2 sm:pr-2 sm:pl-8 sm:rounded-[10px]">
-                                {/* Frame 1000003794 */}
+                                {/* 3794 */}
                                 <input
                                     type="text"
                                     placeholder="Masukkan Emailmu"

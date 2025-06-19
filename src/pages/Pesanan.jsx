@@ -1,11 +1,14 @@
 import { Album, ShoppingBag, User } from "lucide-react";
 import { Link } from "react-router";
 import Pesanan_layout from "../layouts/Pesanan_layout";
-import Tabs from "../components/molecules/Tabs_pesanan";
+import Tabs from "../components/molecules/Tabs";
 import Filter from "../components/molecules/Filter";
 import Card_pesanan from "../components/molecules/Card_pesanan";
-import Pagination from "../components/molecules/Pagination"
+import Pagination from "../components/molecules/Pagination";
 import Menu_daftar from "../components/molecules/Menu_daftar";
+
+const TabsList = ["Semua Pesanan", "Menunggu", "Berhasil", "Gagal"];
+
 const Pesanan = () => {
     return (
         <Pesanan_layout>
@@ -29,14 +32,14 @@ const Pesanan = () => {
                 <div className="grid gap-6 p-5 rounded-[10px] border border-other-border bg-other-primary sm:w-full">
                     {/* 4786 */}
                     <div className="grid gap-6 sm:flex">
-                        <Tabs />
+                        <Tabs TabsList={TabsList} />
                         <Filter />
                     </div>
                     <Card_pesanan />
-                    <Card_pesanan status="gagal"/>
-                    <Card_pesanan status="belum"/>
-                    <Card_pesanan/>
-                    <Card_pesanan/>
+                    <Card_pesanan status="gagal" />
+                    <Card_pesanan status="belum" />
+                    <Card_pesanan />
+                    <Card_pesanan />
                     <Pagination />
                 </div>
             </div>

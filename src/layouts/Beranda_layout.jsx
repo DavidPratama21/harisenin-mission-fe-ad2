@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, LogOut } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router";
 import { useMediaQuery } from "react-responsive";
 import Header from "../components/organisems/Header";
 import Footer from "../components/organisems/Footer";
+import Drop_down_menu from "../components/molecules/Drop_down_menu";
 import Logo from "../components/atoms/Logo";
 import Profile from "../assets/Profile.png";
 
@@ -56,42 +57,7 @@ const Beranda_layout = ({ children }) => {
             </Header>
             {isProfileOpen && (
                 // Drop Down Menu
-                <div
-                    ref={dropDownRef}
-                    className="rounded-b fixed z-2 w-full top-16 sm:right-30 sm:w-[220px] bg-white shadow-[0_0_1px_0_rgba(62,67,74,0.31),0_18px_28px_0_rgba(62,67,74,0.15)]"
-                >
-                    <Link
-                        to="/kategori"
-                        className="sm:hidden text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Kategori
-                    </Link>
-                    <Link
-                        to="/profil"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Profil Saya
-                    </Link>
-                    <Link
-                        to="/kelas"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Kelas Saya
-                    </Link>
-                    <Link
-                        to="/pesanan"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex "
-                    >
-                        Pesanan Saya
-                    </Link>
-                    <Link
-                        to="/login"
-                        className="flex items-center gap-[5px] text-error-default font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4"
-                    >
-                        Keluar
-                        <LogOut />
-                    </Link>
-                </div>
+                <Drop_down_menu ref={dropDownRef} />
             )}
 
             {children}

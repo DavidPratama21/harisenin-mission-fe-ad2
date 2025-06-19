@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import Beranda from "../pages/Beranda";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -12,12 +12,9 @@ import Pesanan from "../pages/Pesanan";
 import Kelas from "../pages/Kelas";
 import Profil from "../pages/Profil";
 import Video from "../pages/Video";
+import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Beranda />,
-    },
     {
         path: "/login",
         element: <Login />,
@@ -27,43 +24,91 @@ export const router = createBrowserRouter([
         element: <Register />,
     },
     {
+        path: "/",
+        element: (
+            <ProtectedRoute>
+                <Beranda />
+            </ProtectedRoute>
+        ),
+    },
+    {
         path: "/kategori",
-        element: <Kategori />,
+        element: (
+            <ProtectedRoute>
+                <Kategori />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/detailProduk",
-        element: <DetailProduk />,
+        element: (
+            <ProtectedRoute>
+                <DetailProduk />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/metode",
-        element: <Metode />,
+        element: (
+            <ProtectedRoute>
+                <Metode />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/bayar",
-        element: <Bayar />,
+        element: (
+            <ProtectedRoute>
+                <Bayar />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/ubahMetode",
-        element: <UbahMetodePembayaran />,
+        element: (
+            <ProtectedRoute>
+                <UbahMetodePembayaran />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/selesai",
-        element: <Selesai />,
+        element: (
+            <ProtectedRoute>
+                <Selesai />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/pesanan",
-        element: <Pesanan />,
+        element: (
+            <ProtectedRoute>
+                <Pesanan />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/kelas",
-        element: <Kelas />,
+        element: (
+            <ProtectedRoute>
+                <Kelas />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/profil",
-        element: <Profil />,
+        element: (
+            <ProtectedRoute>
+                <Profil />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/video",
-        element: <Video />,
+        element: (
+            <ProtectedRoute>
+                <Video />
+            </ProtectedRoute>
+        ),
     },
 ]);

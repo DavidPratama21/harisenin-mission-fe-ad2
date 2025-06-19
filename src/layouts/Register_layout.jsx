@@ -6,6 +6,7 @@ const Register_layout = ({children}) => {
     <div>
       <Header>
         <Logo />
+        <></>
       </Header>
       {children}
     </div>

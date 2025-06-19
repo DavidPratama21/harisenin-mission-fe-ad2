@@ -1,11 +1,55 @@
-import { Link } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import Register_layout from "../layouts/Register_layout";
 import Button from "../components/atoms/Button";
 import GoogleLogo from "../assets/Google_logo.svg";
+import { Users } from "../data/Users";
 
 const Register = () => {
+    const navigate = useNavigate();
+
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [gender, setGender] = useState("male");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    useEffect(() => {
+        const cek_users_LS = localStorage.getItem("users");
+        // kalo LS nya kosong, isiin dari DB ke LS
+        if (!cek_users_LS) {
+            localStorage.setItem("users", JSON.stringify(Users));
+        }
+    }, []);
+    const handleRegis = (e) => {
+        e.preventDefault();
+
+        // Ambil dari localStorage
+        const users = JSON.parse(localStorage.getItem("users") || []);
+        // Ambil dari input form
+        const new_user = { name, email, gender, phone, password };
+
+        // Cek konfirm PW
+        if (password !== confirmPassword) {
+            alert("Password & Konfirm Password mesti sama");
+            return;
+        }
+
+        // Cek email uda terdaftar / belum
+        if (users.find((user) => user.email === email)) {
+            alert("Email uda terdaftar");
+            return;
+        }
+
+        // Add user baru ke LS
+        users.push(new_user);
+        localStorage.setItem("users", JSON.stringify(users));
+        navigate("/login");
+    };
+
     return (
         <Register_layout>
             {/* 3752 */}
@@ -22,134 +66,152 @@ const Register = () => {
                         </p>
                     </div>
 
-                    {/* Frame 1000004406, Regis Form */}
+                    {/* 4406, Regis Form */}
                     <div className="grid gap-5 sm:gap-6">
-                        {/* Frame 1000004405, Input & Regis/Enter BTN */}
-                        <div className="grid gap-6">
-                            {/* Frame 1000004403, Input Nama, Email, No HP, PW & Confirm PW */}
-                            <div className="grid gap-3 sm:gap-4">
-                                {/* Nama */}
-                                <div className="grid">
-                                    <label
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
-                                    >
-                                        Nama Lengkap
-                                    </label>
-                                    <input
-                                        type="text"
-                                        required
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
-                                </div>
-
-                                {/* Email */}
-                                <div className="grid">
-                                    <label
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
-                                    >
-                                        E-mail
-                                    </label>
-                                    <input
-                                        type="email"
-                                        required
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
-                                </div>
-
-                                {/* Jenis Kelamin */}
-                                <div className="grid">
-                                    <label
-                                        for="gender"
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
-                                    >
-                                        Jenis Kelamin
-                                    </label>
-                                    <select
-                                        name="gender"
-                                        required
-                                        className="px-2.5 py-3 rounded-[6px] text-dark-secondary border border-other-border"
-                                    >
-                                        <option value="" disabled hidden>
-                                            -- Pilih opsi --
-                                        </option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
-                                </div>
-
-                                {/* No. Hp */}
-                                <div className="grid">
-                                    <label
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
-                                    >
-                                        No. Hp
-                                    </label>
-                                    {/* Input Phone Num */}
-                                    <div className="grid gap-2 py-1 border border-other-border rounded-[6px]">
-                                        <PhoneInput
-                                            country="id"
-                                            buttonClass="!border-none !bg-light-primary"
-                                            containerClass="!py-1 px-2.5"
-                                            dropdownClass="font-lato"
-                                            inputClass="!border-none !bg-light-primary font-lato !w-full "
+                        <div className="grid gap-4">
+                            {/* 4405, Input & Regis/Enter BTN */}
+                            <form onSubmit={handleRegis} className="grid gap-6">
+                                {/* 4403, Input Nama, Email, No HP, PW & Confirm PW */}
+                                <div className="grid gap-3 sm:gap-4">
+                                    {/* Nama */}
+                                    <div className="grid">
+                                        <label
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
+                                        >
+                                            Nama Lengkap
+                                        </label>
+                                        <input
+                                            required
+                                            onChange={(e) =>
+                                                setName(e.target.value)
+                                            }
+                                            type="text"
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
                                         />
                                     </div>
-                                </div>
+                                    {/* Email */}
+                                    <div className="grid">
+                                        <label
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
+                                        >
+                                            E-mail
+                                        </label>
+                                        <input
+                                            required
+                                            onChange={(e) =>
+                                                setEmail(e.target.value)
+                                            }
+                                            type="email"
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
+                                        />
+                                    </div>
+                                    {/* Jenis Kelamin */}
+                                    <div className="grid">
+                                        <label
+                                            for="gender"
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
+                                        >
+                                            Jenis Kelamin
+                                        </label>
+                                        <select
+                                            required
+                                            onChange={(e) =>
+                                                setGender(e.target.value)
+                                            }
+                                            name="gender"
+                                            className="px-2.5 py-3 rounded-[6px] text-dark-secondary border border-other-border"
+                                        >
+                                            <option value="male">Male</option>
+                                            <option value="female">
+                                                Female
+                                            </option>
+                                        </select>
+                                    </div>
+                                    {/* No. Hp */}
+                                    <div className="grid">
+                                        <label
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 sm:text-base"
+                                        >
+                                            No. Hp
+                                        </label>
+                                        {/* Input Phone Num */}
+                                        <div className="grid gap-2 py-1 border border-other-border rounded-[6px]">
+                                            <PhoneInput
+                                                required
+                                                value={phone}
+                                                onChange={(value) =>
+                                                    setPhone(value)
+                                                }
+                                                country="id"
+                                                buttonClass="!border-none !bg-light-primary"
+                                                containerClass="!py-1 px-2.5"
+                                                dropdownClass="font-lato"
+                                                inputClass="!border-none !bg-light-primary font-lato !w-full "
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Password */}
+                                    <div className="grid text-sm">
+                                        <label
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px]"
+                                        >
+                                            Kata Sandi
+                                        </label>
+                                        <input
+                                            required
+                                            onChange={(e) =>
+                                                setPassword(e.target.value)
+                                            }
+                                            type="password"
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
+                                        />
+                                    </div>
+                                    {/* Confirm Password */}
+                                    <div className="grid text-sm">
+                                        <label
+                                            htmlFor=""
+                                            className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px]"
+                                        >
+                                            Konfirmasi Kata Sandi
+                                        </label>
+                                        <input
+                                            required
+                                            onChange={(e) =>
+                                                setConfirmPassword(
+                                                    e.target.value
+                                                )
+                                            }
+                                            type="password"
+                                            className="px-2.5 py-3 rounded-[6px] border border-other-border"
+                                        />
+                                    </div>
 
-                                {/* Password */}
-                                <div className="grid text-sm">
-                                    <label
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px]"
+                                    {/* Forgot Password */}
+                                    <a
+                                        href=""
+                                        className="text-sm font-medium text-dark-secondary leading-[140%] tracking-[0.2px] justify-self-end sm:text-base"
                                     >
-                                        Kata Sandi
-                                    </label>
-                                    <input
-                                        type="password"
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
+                                        Lupa Password?
+                                    </a>
                                 </div>
-
-                                {/* Confirm Password */}
-                                <div className="grid text-sm">
-                                    <label
-                                        htmlFor=""
-                                        className="text-sm text-dark-secondary leading-[140%] tracking-[0.2px] after:content-['*'] after:text-red-500 after:ml-1 justify-self-start sm:text-[16px]"
-                                    >
-                                        Konfirmasi Kata Sandi
-                                    </label>
-                                    <input
-                                        type="password"
-                                        className="px-2.5 py-3 rounded-[6px] border border-other-border"
-                                    />
-                                </div>
-
-                                {/* Forgot Password */}
-                                <a
-                                    href=""
-                                    className="text-sm font-medium text-dark-secondary leading-[140%] tracking-[0.2px] justify-self-end sm:text-base"
-                                >
-                                    Lupa Password?
-                                </a>
-                            </div>
-
-                            {/* Frame 1000004809, Button Daftar & Masuk */}
-                            <div className="grid gap-4">
-                                {/* Button Masuk */}
-                                <Button to="/">Masuk</Button>
-
                                 {/* Button Daftar */}
-                                <Button to="/login" reverse="yes">
-                                    Daftar
-                                </Button>
-                            </div>
+                                <Button type="submit">Daftar</Button>
+                            </form>
+                            {/* Button Masuk */}
+                            <Button
+                                type="button"
+                                action={() => navigate("/login")}
+                                style="reverse"
+                            >
+                                Masuk
+                            </Button>
                         </div>
-
-                        {/* Frame 1000004407, Atau */}
+                        {/* 4407, Atau */}
                         <div className="flex mx-auto items-center gap-2.5 w-full">
                             <div className="h-0.5 w-full bg-other-border "></div>
                             {/* Frame 1000004408 */}

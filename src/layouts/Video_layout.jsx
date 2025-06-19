@@ -3,8 +3,9 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Divider from "../components/atoms/Divider"
-import Button from "../components/atoms/Button"
+import Drop_down_menu from "../components/molecules/Drop_down_menu";
+import Divider from "../components/atoms/Divider";
+import Button from "../components/atoms/Button";
 import Profile from "../assets/Profile.png";
 const Video_layout = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });
@@ -46,9 +47,10 @@ const Video_layout = ({ children }) => {
                     </p>
                 </div>
                 {/* Progress video */}
-                <button 
+                <button
                     onClick={() => setIsProgressOpen(!isProgressOpen)}
-                    className="flex gap-2 items-center text-primary mr-6">
+                    className="flex gap-2 items-center text-primary mr-6"
+                >
                     {/* Bar Progress */}
                     <span className="flex gap-2.5 rounded-[10px] bg-secondary-100 w-36.5">
                         <span className="rounded-[20px] bg-secondary w-28 h-3"></span>
@@ -77,48 +79,17 @@ const Video_layout = ({ children }) => {
             </Header>
             {isProfileOpen && (
                 // Drop Down Menu
-                <div
-                    ref={dropDownRef}
-                    className="rounded-b fixed z-2 w-full top-14 sm:right-30 sm:w-[220px] bg-white shadow-[0_0_1px_0_rgba(62,67,74,0.31),0_18px_28px_0_rgba(62,67,74,0.15)]"
-                >
-                    <Link
-                        to="/kategori"
-                        className="sm:hidden text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Kategori
-                    </Link>
-                    <Link
-                        to="/profil"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Profil Saya
-                    </Link>
-                    <Link
-                        to="/kelas"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex"
-                    >
-                        Kelas Saya
-                    </Link>
-                    <Link
-                        to="/pesanan"
-                        className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex "
-                    >
-                        Pesanan Saya
-                    </Link>
-                    <Link
-                        to="/login"
-                        className="flex items-center gap-[5px] text-error-default font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4"
-                    >
-                        Keluar
-                        <LogOut />
-                    </Link>
-                </div>
+                <Drop_down_menu ref={dropDownRef} />
             )}
             {isProgressOpen && (
                 <div className="absolute top-14 right-15 z-1 w-80 shadow-[0_12px_25px_-10px_rgba(61,61,61,0.15)] grid p-6 gap-3 rounded bg-other-primary">
-                    <p className="font-semibold leading-[120%] text-dark-primary">25% Modul Telah Selesai</p>
+                    <p className="font-semibold leading-[120%] text-dark-primary">
+                        25% Modul Telah Selesai
+                    </p>
                     <Divider />
-                    <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary">Selesaikan Semua Modul Untuk Mendapatkan Sertifikat</p>
+                    <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary">
+                        Selesaikan Semua Modul Untuk Mendapatkan Sertifikat
+                    </p>
                     <Button type="disabled">Ambil Sertifikat</Button>
                 </div>
             )}

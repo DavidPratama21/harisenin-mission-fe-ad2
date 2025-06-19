@@ -9,7 +9,7 @@ const Logo = () => {
         >
             <img
                 src={VideoBelajar}
-                className="h-[22px] sm:h-[30px]"
+                className="h-[25px] sm:h-[30px]"
                 alt="Logo Video Belajar"
             />
         </Link>

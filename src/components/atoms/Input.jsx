@@ -1,12 +1,13 @@
-import React from "react";
+import { Eye, EyeOff } from "lucide-react";
 
-const Input = ({type, value, children }) => {
+const Input = ({id, type, value, children, onChange }) => {
     return (
         <div className="relative">
             <input
                 type={type}
                 value={value}
-                id=""
+                id={id}
+                onChange={onChange}
                 className="peer h-[49px] border border-gray-300 rounded-[10px] px-3 focus:outline-none focus:border-primary w-full"
             />
             <label

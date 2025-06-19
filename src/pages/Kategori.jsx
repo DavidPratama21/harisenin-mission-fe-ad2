@@ -1,6 +1,6 @@
 import Kategori_layout from "../layouts/Kategori_layout";
 import Card from "../components/molecules/Card";
-import Filter from "../components/molecules/Filter copy";
+import Filter from "../components/molecules/Filter";
 import Pagination from "../components/molecules/Pagination";
 import {
     BookText,
@@ -33,9 +33,9 @@ const Kategori = () => {
     return (
         <>
             <Kategori_layout>
-                {/* Frame 1000003752 */}
+                {/* 3752 */}
                 <div className="grid py-7 px-5 gap-6 relative top-16 mb-16 sm:py-16 sm:px-30 sm:gap-9 sm:max-w-[1440px] sm:mx-auto">
-                    {/* Frame 1000003692 */}
+                    {/* 3692 */}
                     <div className="grid gap-2.5">
                         <h1 className="font-semibold text-2xl leading-[110%] text-dark-primary sm:text-[32px]">
                             Koleksi Video Pembelajaran Unggulan
@@ -44,11 +44,11 @@ const Kategori = () => {
                             Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!
                         </p>
                     </div>
-                    {/* Frame 1000004503 */}
+                    {/* 4503 */}
                     <div className="grid gap-6 sm:flex sm:gap-10.5">
                         {/* Desc & Button */}
                         <div className="grid gap-3 rounded-[10px] border border-other-border p-4 bg-other-primarysm:p-5 sm:gap-4 sm:justify-start sm:h-fit">
-                            {/* Frame 1000004502 */}
+                            {/* 4502 */}
                             <div className="flex justify-between">
                                 <p className="font-semibold text-lg leading-[120%] text-dark-secondary">
                                     Filter
@@ -57,9 +57,9 @@ const Kategori = () => {
                                     Reset
                                 </button>
                             </div>
-                            {/* Frame 1000003794 */}
+                            {/* 3794 */}
                             <div className="grid rounded-[10px] border border-other-border py-3 px-4 gap-4.5 bg-other-primary">
-                                {/* Frame 1000004500 */}
+                                {/* 4500 */}
                                 <button className="flex gap-4 text-primary items-center justify-between">
                                     <div className="flex gap-4 items-center font-medium">
                                         <BookText size={24} />
@@ -67,7 +67,7 @@ const Kategori = () => {
                                     </div>
                                     <ChevronDown />
                                 </button>
-                                {/* Frame 1000004501 */}
+                                {/* 4501 */}
                                 <form className="hidden sm:grid gap-3 ">
                                     <div className="flex gap-3 items-center p-1.5">
                                         <span className="size-4.5 rounded border border-primary bg-primary-100"></span>
@@ -107,9 +107,9 @@ const Kategori = () => {
                                     </div>
                                 </form>
                             </div>
-                            {/* Frame 1000004500 */}
+                            {/* 4500 */}
                             <div className="grid rounded-[10px] border border-other-border py-3 px-4 gap-4.5 bg-other-primary">
-                                {/* Frame 1000004500 */}
+                                {/* 4500 */}
                                 <button className="flex gap-4 text-primary items-center justify-between">
                                     <div className="flex gap-4 items-center">
                                         <ShoppingBag />
@@ -117,7 +117,7 @@ const Kategori = () => {
                                     </div>
                                     <ChevronDown />
                                 </button>
-                                {/* Frame 1000004501 */}
+                                {/* 4501 */}
                                 <form className="hidden sm:grid gap-3 ">
                                     <div className="flex gap-3 items-center p-1.5">
                                         <span className="size-4.5 rounded border border-primary bg-primary-100"></span>
@@ -157,9 +157,9 @@ const Kategori = () => {
                                     </div>
                                 </form>
                             </div>
-                            {/* Frame 1000004501 */}
+                            {/* 4501 */}
                             <div className="grid rounded-[10px] border border-other-border py-3 px-4 gap-4.5 bg-other-primary">
-                                {/* Frame 1000004500 */}
+                                {/* 4500 */}
                                 <button className="flex gap-4 text-primary items-center justify-between">
                                     <div className="flex gap-4 items-center">
                                         <Clock />
@@ -167,7 +167,7 @@ const Kategori = () => {
                                     </div>
                                     <ChevronDown />
                                 </button>
-                                {/* Frame 1000004501 */}
+                                {/* 4501 */}
                                 <form className="hidden sm:grid gap-3 ">
                                     <div className="flex gap-3 items-center p-1.5">
                                         <span className="size-4.5 rounded-full border border-primary bg-primary-100"></span>
@@ -202,10 +202,10 @@ const Kategori = () => {
 
                         {/* Card Section */}
                         <div className="grid gap-6 sm:gap-8">
-                            {/* Frame 1000004504 */}
+                            {/* 4504 */}
                             <Filter />
-                            {/* Frame 1000004505 */}
-                            <div className="grid justify-start gap-5 sm:gap-y-8 sm:gap-x-6 sm:grid-cols-2">
+                            {/* 4505 */}
+                            <div className="grid sm:justify-start gap-5 sm:gap-y-8 sm:gap-x-6 sm:grid-cols-2">
                                 <Card image={card_1} tutor={tutor_1} />
                                 <Card image={card_2} tutor={tutor_2} />
                                 <Card image={card_3} tutor={tutor_3} />
