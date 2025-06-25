@@ -13,6 +13,7 @@ import Kelas from "../pages/Kelas";
 import Profil from "../pages/Profil";
 import Video from "../pages/Video";
 import ProtectedRoute from "./ProtectedRoute";
+import Admin from "../pages/Admin";
 
 export const router = createBrowserRouter([
     {
@@ -108,6 +109,14 @@ export const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <Video />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/admin",
+        element: (
+            <ProtectedRoute>
+                <Admin />
             </ProtectedRoute>
         ),
     },
