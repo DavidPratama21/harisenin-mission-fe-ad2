@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
 import { PencilIcon, TrashIcon } from "lucide-react";
+import { useStore } from "../../ProductStore";
 
-export default function Product_list({ products, editProduct, deleteProduct }) {
+export default function Product_list() {
+    const { products, handleEdit, handleDelete } = useStore();
     return (
         <div className="bg-white rounded-lg shadow-md">
             <h2 className="text-2xl p-5 font-semibold">Product List</h2>
@@ -28,14 +29,22 @@ export default function Product_list({ products, editProduct, deleteProduct }) {
                                         <div className="flex items-center gap-1">
                                             {/* Edit */}
                                             <button
-                                                onClick={() => editProduct(product)}
+                                                onClick={() =>
+                                                    handleEdit(product)
+                                                }
                                                 className="text-info-default"
                                             >
                                                 <PencilIcon size={20} />
                                             </button>
                                             {/* Remove */}
                                             <button
-                                                onClick={() => deleteProduct(product.id)}
+                                                onClick={() => {
+                                                    if (confirm("Yakin?")) {
+                                                        handleDelete(
+                                                            product.id
+                                                        );
+                                                    }
+                                                }}
                                                 className="text-error-default"
                                             >
                                                 <TrashIcon size={20} />

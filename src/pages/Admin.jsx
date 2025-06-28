@@ -1,40 +1,15 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import Admin_layout from "../layouts/Admit_layout";
 import Create_product from "../components/organisems/Create_product";
 import Product_list from "../components/organisems/Product_list";
+import { useStore } from "../ProductStore";
+
 const Admin = () => {
-    const timeStamp = Date.now()
-    console.log(timeStamp)
+    const fetchProducts = useStore((state) => state.fetchProduct);
 
-    const [products, setProducts] = useState([]);
-    const [productEdit, setProductEdit] = useState(null);
-    const api_url = import.meta.env.VITE_API_URL;
     useEffect(() => {
-        axios
-            .get(`${api_url}/Products`)
-            .then((response) => {
-                console.log(response.data);
-                setProducts(response.data);
-            })
-            .catch((error) => console.error(error));
-    }, [api_url]);
-
-    const handleAdd = () => {
-        const newProduct = {
-            ...product,
-            // id:
-        }
-    };
-
-    const handleEdit = (product) => {
-        setProductEdit(product);
-        // console.log(product)
-    };
-
-    const handleUpdate = () => {}
-
-    const handleDelete = () => {};
+        fetchProducts();
+    }, [fetchProducts]);
 
     return (
         <Admin_layout>
@@ -45,19 +20,9 @@ const Admin = () => {
                     <p>Welcome to admin dashboard</p>
                 </div>
                 {/* Table Create Item */}
-                <Create_product
-                    onSubmit={productEdit ? handleUpdate : handleAdd}
-                    mauEdit={productEdit}
-                    mauCancel={
-                        productEdit ? () => setProductEdit(null) : undefined
-                    }
-                />
+                <Create_product />
                 {/* Product List */}
-                <Product_list
-                    products={products}
-                    editProduct={handleEdit}
-                    deleteProduct={``}
-                />
+                <Product_list />
             </div>
         </Admin_layout>
     );
