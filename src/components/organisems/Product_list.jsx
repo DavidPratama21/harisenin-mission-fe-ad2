@@ -3,6 +3,7 @@ import { useStore } from "../../ProductStore";
 
 export default function Product_list() {
     const { products, handleEdit, handleDelete } = useStore();
+    // console.log(products)
     return (
         <div className="bg-white rounded-lg shadow-md">
             <h2 className="text-2xl p-5 font-semibold">Product List</h2>

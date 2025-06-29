@@ -6,7 +6,7 @@ const Create_product = () => {
         formData,
         productEdit,
         handleAdd,
-        handleEdit,
+        handleUpdate,
         handleChange,
         cancelEdit,
     } = useStore();
@@ -52,7 +52,7 @@ const Create_product = () => {
 
     return (
         <form
-            onSubmit={productEdit ? handleEdit : handleAdd}
+            onSubmit={productEdit ? handleUpdate : handleAdd}
             className="bg-white p-5 rounded-lg shadow-md grid gap-4"
         >
             <h1 className="text-2xl font-semibold">Create New Product</h1>
@@ -63,7 +63,7 @@ const Create_product = () => {
                         Product Name
                     </label>
                     <input
-                        name="name"
+                        name="title"
                         type="text"
                         value={formData.title}
                         onChange={handleChange}
@@ -141,6 +141,7 @@ const Create_product = () => {
                     <textarea
                         name="desc"
                         value={formData.desc}
+                        onChange={handleChange}
                         className="px-2 py-3 border border-gray-300 rounded-lg"
                         required
                     ></textarea>

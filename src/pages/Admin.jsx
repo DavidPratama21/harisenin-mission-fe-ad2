@@ -5,7 +5,7 @@ import Product_list from "../components/organisems/Product_list";
 import { useStore } from "../ProductStore";
 
 const Admin = () => {
-    const fetchProducts = useStore((state) => state.fetchProduct);
+    const fetchProducts = useStore((state) => state.fetchProducts);
 
     useEffect(() => {
         fetchProducts();
