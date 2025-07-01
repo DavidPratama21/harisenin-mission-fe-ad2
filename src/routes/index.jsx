@@ -14,15 +14,28 @@ import Profil from "../pages/Profil";
 import Video from "../pages/Video";
 import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin";
+import PublicRoute from "./PublicRoute";
+import Aturan from "../pages/Aturan";
+import Quiz from "../pages/Quiz";
+import Congrats from "../pages/Congrats";
+import Sertifikat from "../pages/Sertifikat";
 
 export const router = createBrowserRouter([
     {
         path: "/login",
-        element: <Login />,
+        element: (
+            <PublicRoute>
+                <Login />
+            </PublicRoute>
+        ),
     },
     {
         path: "/register",
-        element: <Register />,
+        element: (
+            <PublicRoute>
+                <Register />
+            </PublicRoute>
+        ),
     },
     {
         path: "/",
@@ -109,6 +122,38 @@ export const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <Video />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/aturan",
+        element: (
+            <ProtectedRoute>
+                <Aturan />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/quiz",
+        element: (
+            <ProtectedRoute>
+                <Quiz />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/congrats",
+        element: (
+            <ProtectedRoute>
+                <Congrats />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/sertifikat",
+        element: (
+            <ProtectedRoute>
+                <Sertifikat />
             </ProtectedRoute>
         ),
     },

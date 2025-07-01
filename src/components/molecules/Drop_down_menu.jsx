@@ -5,8 +5,10 @@ const Drop_down_menu = ({ ref }) => {
     const navigate = useNavigate();
     const handleLogOut = () => {
         localStorage.removeItem("Lagi Login");
+        localStorage.removeItem("Login")
         navigate("/login");
     };
+    const user = JSON.parse(localStorage.getItem("Lagi Login"));
 
     return (
         <div
@@ -37,12 +39,14 @@ const Drop_down_menu = ({ ref }) => {
             >
                 Pesanan Saya
             </Link>
-            <Link
-                to="/admin"
-                className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex "
-            >
-                Admin
-            </Link>
+            {user?.role === "admin" && (
+                <Link
+                    to="/admin"
+                    className="text-dark-secondary font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 flex "
+                >
+                    Admin
+                </Link>
+            )}
             <button
                 onClick={handleLogOut}
                 className="flex items-center gap-[5px] text-error-default font-medium leading-[140%] tracking-[0.2px] border border-other-border px-3 py-4 w-full"

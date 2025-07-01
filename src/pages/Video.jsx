@@ -9,6 +9,7 @@ import Video_layout from "../layouts/Video_layout";
 import Video_section from "../components/molecules/Video_section";
 import Video_play from "../components/molecules/Video_play";
 import avatar from "../assets/Avatar_tutor/1.png";
+import { Link } from "react-router";
 
 const Video = () => {
     return (
@@ -135,11 +136,11 @@ const Video = () => {
                         <p className="hidden sm:inline">Foundations of user Experience Design</p>
                     </div>
                     {/* Selanjutnya */}
-                    <div className="flex gap-2.5 items-center sm:gap-4">
+                    <Link to="/aturan" className="flex gap-2.5 items-center sm:gap-4">
                         <p className="sm:hidden">Selanjutnya</p>
                         <p className="hidden sm:inline">Foundations of user Experience Design</p>
                         <ChevronRight />
-                    </div>
+                    </Link>
                 </div>
                 {/* 4797 */}
                 <div className="border-t border-other-border sm:w-full">

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Stars from "../atoms/Stars";
 
 const Card = ({ image, tutor }) => {
     return (
@@ -6,7 +7,7 @@ const Card = ({ image, tutor }) => {
             to="/detailProduk"
             className="grid rounded-[10px] p-4 gap-2 bg-other-primary border border-other-border sm:w-[384px] sm:p-5"
         >
-            {/* Frame 1000004805, Img, Title, Tutor */}
+            {/* 4805, Img, Title, Tutor */}
             <div className="flex gap-3 items-center sm:grid">
                 {/* Image */}
                 <img
@@ -15,7 +16,7 @@ const Card = ({ image, tutor }) => {
                     className="h-[82px] sm:h-[193px] object-cover aspect-square sm:aspect-video rounded-[10px]"
                 />
 
-                {/* Frame 1000004804, Title & Tutor */}
+                {/* 4804, Title & Tutor */}
                 <div className="grid gap-2 sm:gap-3">
                     {/* Title */}
                     <div className="grid gap-2">
@@ -28,7 +29,7 @@ const Card = ({ image, tutor }) => {
                         </p>
                     </div>
 
-                    {/* Frame 1000004496, Tutor */}
+                    {/* 4496, Tutor */}
                     <div className="flex gap-2 items-center sm:gap-2.5">
                         {/* Foto Profile */}
                         <img
@@ -41,7 +42,7 @@ const Card = ({ image, tutor }) => {
                             <p className="font-medium text-dark-primary leading-[140%] tracking-[0.2px] text-sm sm:text-base">
                                 Jenna Ortega
                             </p>
-                            {/* Frame 1000004497 */}
+                            {/* 4497 */}
                             <div className="flex gap-1 sm:text-sm">
                                 <p className="text-xs font-normal text-dark-secondary leading-[140%] tracking-[0.2px] sm:text-sm">
                                     Senior Accountant
@@ -58,79 +59,10 @@ const Card = ({ image, tutor }) => {
                 </div>
             </div>
 
-            {/* Frame 1000004498, Rating & price */}
+            {/* 4498, Rating & price */}
             <div className="flex justify-between items-center">
-                {/*Frame 1000004495, rating */}
-                <div className="flex gap-2">
-                    {/* Rating */}
-                    <div className="flex">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="14.25"
-                            viewBox="0 0 16 15"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 11.4525L12.635 14.25L11.405 8.9775L15.5 5.43L10.1075 4.9725L8 0L5.8925 4.9725L0.5 5.43L4.595 8.9775L3.365 14.25L8 11.4525Z"
-                                fill="#FCE91B"
-                            />
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="14.25"
-                            viewBox="0 0 16 15"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 11.4525L12.635 14.25L11.405 8.9775L15.5 5.43L10.1075 4.9725L8 0L5.8925 4.9725L0.5 5.43L4.595 8.9775L3.365 14.25L8 11.4525Z"
-                                fill="#FCE91B"
-                            />
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="14.25"
-                            viewBox="0 0 16 15"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 11.4525L12.635 14.25L11.405 8.9775L15.5 5.43L10.1075 4.9725L8 0L5.8925 4.9725L0.5 5.43L4.595 8.9775L3.365 14.25L8 11.4525Z"
-                                fill="#FCE91B"
-                            />
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="14.25"
-                            viewBox="0 0 16 15"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 11.4525L12.635 14.25L11.405 8.9775L15.5 5.43L10.1075 4.9725L8 0L5.8925 4.9725L0.5 5.43L4.595 8.9775L3.365 14.25L8 11.4525Z"
-                                fill="#3A3541"
-                                fillOpacity="0.12"
-                            />
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="14.25"
-                            viewBox="0 0 16 15"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 11.4525L12.635 14.25L11.405 8.9775L15.5 5.43L10.1075 4.9725L8 0L5.8925 4.9725L0.5 5.43L4.595 8.9775L3.365 14.25L8 11.4525Z"
-                                fill="#3A3541"
-                                fill-opacity="0.12"
-                            />
-                        </svg>
-                    </div>
-                    <p className="font-medium text-xs leading-[140%] tracking-[0.2px] underline text-dark-secondary sm:text-sm">
-                        3.5 (86)
-                    </p>
-                </div>
+                {/* 4495, rating */}
+                <Stars />
 
                 <p className="font-semibold text-xl text-primary leading-[120%] sm:text-2xl">
                     Rp 300K

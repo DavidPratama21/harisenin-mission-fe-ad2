@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Drop_down_menu from "../components/molecules/Drop_down_menu";
+import Done_quiz_confirm from "../components/modals/Done_quiz_confirm";
+import Bar_progress from "../components/atoms/bar_progress";
+import Ambil_serti from "../components/molecules/Ambil_serti";
 import Divider from "../components/atoms/Divider";
 import Button from "../components/atoms/Button";
-import Bar_progress from "../components/atoms/bar_progress";
+import Serti_modal from "../components/modals/Serti_modal";
 import Profile from "../assets/Profile.png";
-const Video_layout = ({ children }) => {
+import { useStore } from "../store/RandomStore";
+import Review_box from "../components/modals/Review_box";
+const Congrats_layout = ({ children }) => {
+    const { isOpen } = useStore();
     const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isProgressOpen, setIsProgressOpen] = useState(false);
@@ -53,11 +57,12 @@ const Video_layout = ({ children }) => {
                     className="flex gap-2 items-center text-primary mr-6"
                 >
                     {/* Bar Progress */}
-                    <Bar_progress />
+                    {/* <Bar_progress />
                     <p className="font-bold leading-[140%] tracking-[0.2px]">
                         10/12
                     </p>
-                    <ChevronDown />
+                    <ChevronDown /> */}
+                    <Ambil_serti />
                 </button>
                 {/* Hum / Profile */}
                 {isMobile ? (
@@ -80,21 +85,11 @@ const Video_layout = ({ children }) => {
                 // Drop Down Menu
                 <Drop_down_menu ref={dropDownRef} />
             )}
-            {isProgressOpen && (
-                <div className="absolute top-14 right-15 z-1 w-80 shadow-[0_12px_25px_-10px_rgba(61,61,61,0.15)] grid p-6 gap-3 rounded bg-other-primary">
-                    <p className="font-semibold leading-[120%] text-dark-primary">
-                        25% Modul Telah Selesai
-                    </p>
-                    <Divider />
-                    <p className="text-sm leading-[140%] tracking-[0.2px] text-dark-secondary">
-                        Selesaikan Semua Modul Untuk Mendapatkan Sertifikat
-                    </p>
-                    <Button style="disabled">Ambil Sertifikat</Button>
-                </div>
-            )}
+            {isProgressOpen && <Serti_modal status="done" />}
+            {isOpen && <Review_box />}
             {children}
         </div>
     );
 };
 
-export default Video_layout;
+export default Congrats_layout;

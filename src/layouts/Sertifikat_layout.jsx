@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu } from "lucide-react";
-import { Link } from "react-router";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router";
+import { Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
 import Footer from "../components/organisems/Footer";
 import Drop_down_menu from "../components/molecules/Drop_down_menu";
 import Logo from "../components/atoms/Logo";
 import Profile from "../assets/Profile.png";
 
-const Beranda_layout = ({ children }) => {
+const Sertifikat_layout = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const dropDownRef = useRef(null);
@@ -28,7 +28,6 @@ const Beranda_layout = ({ children }) => {
             document.removeEventListener("mousedown", handleOutsideClick);
         };
     }, []);
-
     return (
         <div>
             <Header>
@@ -56,11 +55,10 @@ const Beranda_layout = ({ children }) => {
                 )}
             </Header>
             {isProfileOpen && <Drop_down_menu ref={dropDownRef} />}
-
             {children}
             <Footer />
         </div>
     );
 };
 
-export default Beranda_layout;
+export default Sertifikat_layout;

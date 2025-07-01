@@ -3,9 +3,12 @@ import { CircleCheck, CirclePlay, BookText, BookCheck } from "lucide-react";
 const Video_section = ({ kategori = "video", status = "belum" }) => {
     return (
         <div
-            className={`grid p-3.5 rounded-[10px] border border-other-border leading-[140%] tracking-[0.2px] sm:p-4 sm:gap-1 ${
-                status === "progres" ? "bg-[#E2FCD966]" : "bg-other-primary"
-            }`}
+            className={`grid p-3.5 rounded-[10px] border leading-[140%] tracking-[0.2px] sm:p-4 sm:gap-1 ${
+                status === "progres"
+                    ? "bg-[#E2FCD966] border-primary"
+                    : "bg-other-primary border-other-border"
+            }
+            `}
         >
             {/* 4795 */}
             <div

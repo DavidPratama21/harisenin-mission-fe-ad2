@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Drop_down_menu from "../components/molecules/Drop_down_menu";
-import Divider from "../components/atoms/Divider";
-import Button from "../components/atoms/Button";
+import Done_quiz_confirm from "../components/modals/Done_quiz_confirm";
 import Bar_progress from "../components/atoms/bar_progress";
 import Profile from "../assets/Profile.png";
-const Video_layout = ({ children }) => {
+import { useStore } from "../store/RandomStore";
+const Quiz_layout = ({ children }) => {
+    const { isOpen, toggle } = useStore();
     const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isProgressOpen, setIsProgressOpen] = useState(false);
@@ -92,9 +91,10 @@ const Video_layout = ({ children }) => {
                     <Button style="disabled">Ambil Sertifikat</Button>
                 </div>
             )}
+            {isOpen && <Done_quiz_confirm onClose={toggle} />}
             {children}
         </div>
     );
 };
 
-export default Video_layout;
+export default Quiz_layout;

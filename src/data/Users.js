@@ -5,6 +5,7 @@ export const Users = [
         gender: "male",
         phone: "812345678",
         password: "admin123",
+        role: "admin"
     },
     {
         name: "User",
@@ -12,6 +13,7 @@ export const Users = [
         gender: "male",
         phone: "812345678",
         password: "user123",
+        role: "user"
     },
     {
         name: "Jennie Ruby Jane",
@@ -19,5 +21,6 @@ export const Users = [
         gender: "female",
         phone: "812345678",
         password: "JRJ123",
+        role: "user"
     },
 ];

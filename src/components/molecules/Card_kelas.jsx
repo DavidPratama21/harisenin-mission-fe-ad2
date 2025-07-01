@@ -122,14 +122,13 @@ const Card_pesanan = ({ status = "Selesai" }) => {
                             Unduh Sertifikat
                         </Link>
                     )}
-                    <Button
-                        to=""
-                        action={
-                            status === "otw"
+                    <Link to="/video">
+                        <Button className="w-full">
+                            {status === "otw"
                                 ? "Lanjutkan Pembelajaran"
-                                : "Lihat Detail Kelas"
-                        }
-                    />
+                                : "Lihat Detail Kelas"}
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>

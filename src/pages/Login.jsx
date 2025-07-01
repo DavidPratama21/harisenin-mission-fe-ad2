@@ -4,6 +4,7 @@ import GoogleLogo from "../assets/Google_logo.svg";
 import Button from "../components/atoms/Button";
 import Login_layout from "../layouts/Login_layout";
 import { Users } from "../data/Users";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Login = () => {
             localStorage.setItem("users", JSON.stringify(Users));
         }
         // Ambil dari localStorage
-        const usersParse = JSON.parse(localStorage.getItem("users") || []);
+        const usersParse = JSON.parse(localStorage.getItem("users") || "[]");
         setUsers(usersParse);
     }, []);
 
@@ -36,10 +37,12 @@ const Login = () => {
         if (user) {
             localStorage.setItem("Login", true);
             localStorage.setItem("Lagi Login", JSON.stringify(user));
-            alert("Login Success");
+            // ga ke pake karena lgsg load ke beranda
+            toast.success("Login Success");
             navigate("/");
         } else {
-            alert("Login Gagal");
+            // ga ke pake karena lgsg load ke beranda
+            toast.error("Login Gagal");
         }
     };
 
@@ -150,6 +153,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </Login_layout>
     );
 };

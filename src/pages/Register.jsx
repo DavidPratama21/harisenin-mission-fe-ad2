@@ -30,7 +30,8 @@ const Register = () => {
         // Ambil dari localStorage
         const users = JSON.parse(localStorage.getItem("users") || []);
         // Ambil dari input form
-        const new_user = { name, email, gender, phone, password };
+        const role = "user"
+        const new_user = { name, email, gender, phone, password, role};
 
         // Cek konfirm PW
         if (password !== confirmPassword) {

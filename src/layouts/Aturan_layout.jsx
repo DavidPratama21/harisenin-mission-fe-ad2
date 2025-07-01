@@ -1,14 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Drop_down_menu from "../components/molecules/Drop_down_menu";
-import Divider from "../components/atoms/Divider";
-import Button from "../components/atoms/Button";
 import Bar_progress from "../components/atoms/bar_progress";
 import Profile from "../assets/Profile.png";
-const Video_layout = ({ children }) => {
+const Aturan_layout = ({children}) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isProgressOpen, setIsProgressOpen] = useState(false);
@@ -97,4 +93,4 @@ const Video_layout = ({ children }) => {
     );
 };
 
-export default Video_layout;
+export default Aturan_layout;
