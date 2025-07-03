@@ -33,29 +33,6 @@ const Register = () => {
     const handleRegis = (e) => {
         e.preventDefault();
         register(navigate);
-
-        // // Ambil dari localStorage
-        // const users = JSON.parse(localStorage.getItem("users") || []);
-        // // Ambil dari input form
-        // const role = "user";
-        // const new_user = { name, email, gender, phone, password, role };
-
-        // // Cek konfirm PW
-        // if (password !== confirmPassword) {
-        //     alert("Password & Konfirm Password mesti sama");
-        //     return;
-        // }
-
-        // // Cek email uda terdaftar / belum
-        // if (users.find((user) => user.email === email)) {
-        //     alert("Email uda terdaftar");
-        //     return;
-        // }
-
-        // // Add user baru ke LS
-        // users.push(new_user);
-        // localStorage.setItem("users", JSON.stringify(users));
-        // navigate("/login");
     };
 
     return (

@@ -45,6 +45,7 @@ export const useStore = create((set, get) => ({
     // Handle Login
     login: (navigate) => {
         const { users, email, password } = get();
+        const resetForm = get().resetForm
         const user = users.find(
             (u) => u.email === email && u.password === password
         );
@@ -62,6 +63,7 @@ export const useStore = create((set, get) => ({
 
     register: (navigate) => {
         const { name, email, gender, phone, password, confirmPassword } = get();
+        const resetForm = get().resetForm
         const role = "user";
 
         const users = JSON.parse(localStorage.getItem("users") || "[]");
