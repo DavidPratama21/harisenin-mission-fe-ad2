@@ -1,9 +1,9 @@
 import { FileDown } from "lucide-react";
-import Button from "../components/atoms/Button";
-import Sertifikat_layout from "../layouts/Sertifikat_layout";
-import Stars from "../components/atoms/Stars";
-import serti from "../assets/serti.png";
-import tutor from "../assets/Avatar_tutor/1.png";
+import Button from "../../components/atoms/Button";
+import Sertifikat_layout from "../../layouts/Sertifikat_layout";
+import Stars from "../../components/atoms/Stars";
+import serti from "../../assets/serti.png";
+import tutor from "../../assets/Avatar_tutor/1.png";
 const Sertifikat = () => {
     return (
         <Sertifikat_layout>

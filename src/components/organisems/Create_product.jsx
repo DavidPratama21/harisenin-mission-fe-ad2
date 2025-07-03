@@ -1,4 +1,4 @@
-import { useStore } from "../../ProductStore";
+import { useStore } from "../../store/ProductStore";
 import Button from "../atoms/Button";
 
 const Create_product = () => {

@@ -1,8 +1,7 @@
-import React from "react";
-
 const Stars = () => {
     return (
         <div className="flex gap-2">
+            {/* Stars */}
             <div className="flex">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +66,11 @@ const Stars = () => {
                     />
                 </svg>
             </div>
+            {[1, 2, 3, 4, 5].map((star) => (
+                <button>
+                    
+                </button>
+            ))}
             <p className="font-medium text-xs leading-[140%] tracking-[0.2px] underline text-dark-secondary sm:text-sm">
                 3.5 (86)
             </p>

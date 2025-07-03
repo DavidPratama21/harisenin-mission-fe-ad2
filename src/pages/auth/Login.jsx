@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import GoogleLogo from "../assets/Google_logo.svg";
-import Button from "../components/atoms/Button";
-import Login_layout from "../layouts/Login_layout";
-import { Users } from "../data/Users";
+// import { auth } from "../../services/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
+import { Users } from "../../data/Users";
+import Button from "../../components/atoms/Button";
+import Login_layout from "../../layouts/Login_layout";
+import GoogleLogo from "../../assets/Google_logo.svg";
 
 const Login = () => {
     const navigate = useNavigate();

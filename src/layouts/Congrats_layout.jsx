@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
 import Done_quiz_confirm from "../components/modals/Done_quiz_confirm";
-import Bar_progress from "../components/atoms/bar_progress";
+import Bar_progress from "../components/atoms/Bar_progress";
 import Ambil_serti from "../components/molecules/Ambil_serti";
 import Divider from "../components/atoms/Divider";
 import Button from "../components/atoms/Button";

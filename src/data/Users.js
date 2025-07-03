@@ -3,7 +3,7 @@ export const Users = [
         name: "Admin",
         email: "admin@gmail.com",
         gender: "male",
-        phone: "812345678",
+        phone: "08123456789",
         password: "admin123",
         role: "admin"
     },
@@ -11,7 +11,7 @@ export const Users = [
         name: "User",
         email: "user@gmail.com",
         gender: "male",
-        phone: "812345678",
+        phone: "08123456789",
         password: "user123",
         role: "user"
     },
@@ -19,7 +19,7 @@ export const Users = [
         name: "Jennie Ruby Jane",
         email: "rubyjane@gmail.com",
         gender: "female",
-        phone: "812345678",
+        phone: "08123456789",
         password: "JRJ123",
         role: "user"
     },

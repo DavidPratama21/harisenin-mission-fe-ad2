@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
 import Done_quiz_confirm from "../components/modals/Done_quiz_confirm";
-import Bar_progress from "../components/atoms/bar_progress";
+import Bar_progress from "../components/atoms/Bar_progress";
 import Profile from "../assets/Profile.png";
 import { useStore } from "../store/RandomStore";
 const Quiz_layout = ({ children }) => {

@@ -8,11 +8,11 @@ import {
     Star,
 } from "lucide-react";
 import { Link } from "react-router";
-import Congrats_layout from "../layouts/Congrats_layout";
-import Video_section from "../components/molecules/Video_section";
-import Button from "../components/atoms/Button";
-import congrats from "../assets/congrats.svg";
-import { useStore } from "../store/RandomStore";
+import Congrats_layout from "../../layouts/Congrats_layout";
+import Video_section from "../../components/molecules/Video_section";
+import Button from "../../components/atoms/Button";
+import congrats from "../../assets/congrats.svg";
+import { useStore } from "../../store/RandomStore";
 const Congrats = () => {
     const { toggle } = useStore();
     return (
@@ -69,7 +69,10 @@ const Congrats = () => {
                                     </p>
                                     {/* V 10 */}
                                     <div className="flex items-center gap-2">
-                                        <CircleCheck fill="#38D189" color="white" />
+                                        <CircleCheck
+                                            fill="#38D189"
+                                            color="white"
+                                        />
                                         <p className="font-semibold text-2xl leading-[120%] text-dark-primary">
                                             10
                                         </p>
@@ -82,7 +85,7 @@ const Congrats = () => {
                                     </p>
                                     {/* X 0 */}
                                     <div className="flex items-center gap-2">
-                                        <CircleX fill="#FF5C2B" color="white"/>
+                                        <CircleX fill="#FF5C2B" color="white" />
                                         <p className="font-semibold text-2xl leading-[120%] text-dark-primary">
                                             0
                                         </p>
@@ -176,7 +179,10 @@ const Congrats = () => {
                         </div>
                     </div>
                     {/* 3103, Review & Rating */}
-                    <div onClick={toggle} className="flex gap-2 py-4 px-9 items-center border-t border-other-border bg-secondary text-light-primary">
+                    <div
+                        onClick={toggle}
+                        className="flex gap-2 py-4 px-9 items-center border-t border-other-border bg-secondary text-light-primary"
+                    >
                         <Star size={20} />
                         <p className="font-bold leading-[24px] tracking-[0.2%]">
                             Beri Review & Rating

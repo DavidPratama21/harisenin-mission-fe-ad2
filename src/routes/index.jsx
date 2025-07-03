@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import Beranda from "../pages/Beranda";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 import Kategori from "../pages/Kategori";
 import DetailProduk from "../pages/DetailProduk";
 import Metode from "../pages/Metode";
@@ -11,14 +11,14 @@ import Selesai from "../pages/Selesai";
 import Pesanan from "../pages/Pesanan";
 import Kelas from "../pages/Kelas";
 import Profil from "../pages/Profil";
-import Video from "../pages/Video";
+import Video from "../pages/pembelajaran/Video";
 import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin";
 import PublicRoute from "./PublicRoute";
 import Aturan from "../pages/Aturan";
-import Quiz from "../pages/Quiz";
-import Congrats from "../pages/Congrats";
-import Sertifikat from "../pages/Sertifikat";
+import Quiz from "../pages/pembelajaran/Quiz";
+import Congrats from "../pages/pembelajaran/Congrats";
+import Sertifikat from "../pages/pembelajaran/Sertifikat";
 
 export const router = createBrowserRouter([
     {

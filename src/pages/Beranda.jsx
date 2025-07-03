@@ -62,7 +62,7 @@ const Beranda = () => {
                     </main>
 
                     {/* Banner CTA */}
-                    <div className="grid h-[400px] px-5 rounded drop-shadow-[0_12px_45px_-10px_rgba(0,59,222,0.2)] bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('./src/assets/CTA_bg.jpg')] bg-center bg-cover place-content-center">
+                    <div className="grid h-[400px] px-5 rounded drop-shadow-[0_12px_45px_-10px_rgba(0,59,222,0.2)] bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('/CTA_bg.jpg')] bg-center bg-cover place-content-center">
                         {/* 3756, Konten */}
                         <div className="grid gap-10">
                             {/* Newsletter */}

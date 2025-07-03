@@ -5,10 +5,10 @@ import {
     ChevronDown,
     Star,
 } from "lucide-react";
-import Video_layout from "../layouts/Video_layout";
-import Video_section from "../components/molecules/Video_section";
-import Video_play from "../components/molecules/Video_play";
-import avatar from "../assets/Avatar_tutor/1.png";
+import Video_layout from "../../layouts/Video_layout";
+import Video_section from "../../components/molecules/Video_section";
+import Video_play from "../../components/molecules/Video_play";
+import avatar from "../../assets/Avatar_tutor/1.png";
 import { Link } from "react-router";
 
 const Video = () => {
@@ -133,12 +133,19 @@ const Video = () => {
                     <div className="flex gap-2.5 items-center sm:gap-4">
                         <ChevronLeft />
                         <p className="sm:hidden">Sebelumnya</p>
-                        <p className="hidden sm:inline">Foundations of user Experience Design</p>
+                        <p className="hidden sm:inline">
+                            Foundations of user Experience Design
+                        </p>
                     </div>
                     {/* Selanjutnya */}
-                    <Link to="/aturan" className="flex gap-2.5 items-center sm:gap-4">
+                    <Link
+                        to="/aturan"
+                        className="flex gap-2.5 items-center sm:gap-4"
+                    >
                         <p className="sm:hidden">Selanjutnya</p>
-                        <p className="hidden sm:inline">Foundations of user Experience Design</p>
+                        <p className="hidden sm:inline">
+                            Foundations of user Experience Design
+                        </p>
                         <ChevronRight />
                     </Link>
                 </div>

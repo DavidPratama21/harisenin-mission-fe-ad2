@@ -6,7 +6,7 @@ import Header from "../components/organisems/Header";
 import Drop_down_menu from "../components/molecules/Drop_down_menu";
 import Divider from "../components/atoms/Divider";
 import Button from "../components/atoms/Button";
-import Bar_progress from "../components/atoms/bar_progress";
+import Bar_progress from "../components/atoms/Bar_progress";
 import Profile from "../assets/Profile.png";
 const Video_layout = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });

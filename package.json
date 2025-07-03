@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@headlessui/react": "^2.2.4",
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.10.0",
     "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "firebase": "^11.10.0",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "react-phone-input-2": "^2.15.1",
     "react-responsive": "^10.0.1",
     "react-router": "^7.6.1",

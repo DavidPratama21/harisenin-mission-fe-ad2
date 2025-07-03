@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import Admin_layout from "../layouts/Admit_layout";
+import Admin_layout from "../layouts/Admin_layout";
 import Create_product from "../components/organisems/Create_product";
 import Product_list from "../components/organisems/Product_list";
-import { useStore } from "../ProductStore";
+import { useStore } from "../store/ProductStore";
 
 const Admin = () => {
     const fetchProducts = useStore((state) => state.fetchProducts);

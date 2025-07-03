@@ -7,11 +7,11 @@ import {
     ArrowRight,
     Star,
 } from "lucide-react";
-import Quiz_layout from "../layouts/Quiz_layout";
-import Video_section from "../components/molecules/Video_section";
-import Button from "../components/atoms/Button";
-import Quiz_number from "../components/atoms/Quiz_number";
-import { useStore } from "../store/RandomStore";
+import Quiz_layout from "../../layouts/Quiz_layout";
+import Video_section from "../../components/molecules/Video_section";
+import Button from "../../components/atoms/Button";
+import Quiz_number from "../../components/atoms/Quiz_number";
+import { useStore } from "../../store/RandomStore";
 const Quiz = () => {
     const { toggle } = useStore();
     return (

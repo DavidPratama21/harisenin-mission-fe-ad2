@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { ArrowLeft, ChevronDown, LogOut, Menu } from "lucide-react";
 import Header from "../components/organisems/Header";
-import Bar_progress from "../components/atoms/bar_progress";
+import Bar_progress from "../components/atoms/Bar_progress";
 import Profile from "../assets/Profile.png";
 const Aturan_layout = ({children}) => {
     const isMobile = useMediaQuery({ maxWidth: 640 });

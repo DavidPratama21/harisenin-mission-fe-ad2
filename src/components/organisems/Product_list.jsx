@@ -1,5 +1,5 @@
 import { PencilIcon, TrashIcon } from "lucide-react";
-import { useStore } from "../../ProductStore";
+import { useStore } from "../../store/ProductStore";
 
 export default function Product_list() {
     const { products, handleEdit, handleDelete } = useStore();

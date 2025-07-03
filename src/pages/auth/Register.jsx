@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
-import Register_layout from "../layouts/Register_layout";
-import Button from "../components/atoms/Button";
-import GoogleLogo from "../assets/Google_logo.svg";
-import { Users } from "../data/Users";
+import Register_layout from "../../layouts/Register_layout";
+import Button from "../../components/atoms/Button";
+import GoogleLogo from "../../assets/Google_logo.svg";
+import { Users } from "../../data/Users";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -30,8 +30,8 @@ const Register = () => {
         // Ambil dari localStorage
         const users = JSON.parse(localStorage.getItem("users") || []);
         // Ambil dari input form
-        const role = "user"
-        const new_user = { name, email, gender, phone, password, role};
+        const role = "user";
+        const new_user = { name, email, gender, phone, password, role };
 
         // Cek konfirm PW
         if (password !== confirmPassword) {
