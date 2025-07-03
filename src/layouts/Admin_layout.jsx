@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu } from "lucide-react";
-import { Link } from "react-router";
 import { useMediaQuery } from "react-responsive";
 import Header from "../components/organisems/Header";
 import Footer from "../components/organisems/Footer";
