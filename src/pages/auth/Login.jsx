@@ -1,51 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 // import { auth } from "../../services/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { ToastContainer, toast } from "react-toastify";
-import { Users } from "../../data/Users";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+import { ToastContainer } from "react-toastify";
 import Button from "../../components/atoms/Button";
 import Login_layout from "../../layouts/Login_layout";
 import GoogleLogo from "../../assets/Google_logo.svg";
+import { useStore } from "../../store/UserStore";
 
 const Login = () => {
     const navigate = useNavigate();
-
-    // ambil data dari input form
-    const [getEmail, setGetEmail] = useState("");
-    const [getPassword, setGetPassword] = useState("");
-
-    const [users, setUsers] = useState([]);
+    const { email, password, setField, resetForm, initializeUsers, login } =
+        useStore();
 
     useEffect(() => {
-        const cek_users_LS = localStorage.getItem("users");
-        // kalo LS nya kosong, isiin dari DB ke LS
-        if (!cek_users_LS) {
-            localStorage.setItem("users", JSON.stringify(Users));
-        }
-        // Ambil dari localStorage
-        const usersParse = JSON.parse(localStorage.getItem("users") || "[]");
-        setUsers(usersParse);
+        initializeUsers();
     }, []);
-
-    // Find user dengan email yg sama dgn input form & cek pwnya juga
-    const user = users.find(
-        (user) => user.email === getEmail && user.password === getPassword
-    );
 
     // Proses Login dari Local
     const handleLogin = (e) => {
         e.preventDefault();
-        if (user) {
-            localStorage.setItem("Login", true);
-            localStorage.setItem("Lagi Login", JSON.stringify(user));
-            // ga ke pake karena lgsg load ke beranda
-            toast.success("Login Success");
-            navigate("/");
-        } else {
-            // ga ke pake karena lgsg load ke beranda
-            toast.error("Login Gagal");
-        }
+        login(navigate);
     };
 
     return (
@@ -87,8 +62,12 @@ const Login = () => {
                                         <input
                                             required
                                             type="email"
+                                            value={email}
                                             onChange={(e) =>
-                                                setGetEmail(e.target.value)
+                                                setField(
+                                                    "email",
+                                                    e.target.value
+                                                )
                                             }
                                             className="px-2.5 py-3 rounded-[6px] border border-other-border"
                                         />
@@ -105,8 +84,12 @@ const Login = () => {
                                         <input
                                             required
                                             type="password"
+                                            value={password}
                                             onChange={(e) =>
-                                                setGetPassword(e.target.value)
+                                                setField(
+                                                    "password",
+                                                    e.target.value
+                                                )
                                             }
                                             className="px-2.5 py-3 rounded-[6px] border border-other-border"
                                         />
@@ -126,7 +109,10 @@ const Login = () => {
                             <Button
                                 type="button"
                                 style="reverse"
-                                action={() => navigate("/register")}
+                                action={() => {
+                                    resetForm();
+                                    navigate("/register");
+                                }}
                             >
                                 Daftar
                             </Button>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
@@ -6,16 +6,21 @@ import Register_layout from "../../layouts/Register_layout";
 import Button from "../../components/atoms/Button";
 import GoogleLogo from "../../assets/Google_logo.svg";
 import { Users } from "../../data/Users";
+import { useStore } from "../../store/UserStore";
 
 const Register = () => {
     const navigate = useNavigate();
-
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [gender, setGender] = useState("male");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const {
+        name,
+        phone,
+        gender,
+        email,
+        password,
+        confirmPassword,
+        setField,
+        resetForm,
+        register,
+    } = useStore();
 
     useEffect(() => {
         const cek_users_LS = localStorage.getItem("users");
@@ -24,38 +29,40 @@ const Register = () => {
             localStorage.setItem("users", JSON.stringify(Users));
         }
     }, []);
+
     const handleRegis = (e) => {
         e.preventDefault();
+        register(navigate);
 
-        // Ambil dari localStorage
-        const users = JSON.parse(localStorage.getItem("users") || []);
-        // Ambil dari input form
-        const role = "user";
-        const new_user = { name, email, gender, phone, password, role };
+        // // Ambil dari localStorage
+        // const users = JSON.parse(localStorage.getItem("users") || []);
+        // // Ambil dari input form
+        // const role = "user";
+        // const new_user = { name, email, gender, phone, password, role };
 
-        // Cek konfirm PW
-        if (password !== confirmPassword) {
-            alert("Password & Konfirm Password mesti sama");
-            return;
-        }
+        // // Cek konfirm PW
+        // if (password !== confirmPassword) {
+        //     alert("Password & Konfirm Password mesti sama");
+        //     return;
+        // }
 
-        // Cek email uda terdaftar / belum
-        if (users.find((user) => user.email === email)) {
-            alert("Email uda terdaftar");
-            return;
-        }
+        // // Cek email uda terdaftar / belum
+        // if (users.find((user) => user.email === email)) {
+        //     alert("Email uda terdaftar");
+        //     return;
+        // }
 
-        // Add user baru ke LS
-        users.push(new_user);
-        localStorage.setItem("users", JSON.stringify(users));
-        navigate("/login");
+        // // Add user baru ke LS
+        // users.push(new_user);
+        // localStorage.setItem("users", JSON.stringify(users));
+        // navigate("/login");
     };
 
     return (
         <Register_layout>
             {/* 3752 */}
             <div className="relative top-16 mb-16 py-7 px-5 gap-6 grid bg-[#FFFDF3] sm:px-30 sm:py-16 sm:text-base">
-                {/* Frame 42224, Box */}
+                {/* 42224, Box */}
                 <div className="rounded-sm border border-other-border p-5 gap-5 grid bg-light-primary sm:w-[590px] sm:mx-auto">
                     {/* Desc */}
                     <div className="grid gap-2.5 text-center">
@@ -84,8 +91,9 @@ const Register = () => {
                                         </label>
                                         <input
                                             required
+                                            value={name}
                                             onChange={(e) =>
-                                                setName(e.target.value)
+                                                setField("name", e.target.value)
                                             }
                                             type="text"
                                             className="px-2.5 py-3 rounded-[6px] border border-other-border"
@@ -101,8 +109,12 @@ const Register = () => {
                                         </label>
                                         <input
                                             required
+                                            value={email}
                                             onChange={(e) =>
-                                                setEmail(e.target.value)
+                                                setField(
+                                                    "email",
+                                                    e.target.value
+                                                )
                                             }
                                             type="email"
                                             className="px-2.5 py-3 rounded-[6px] border border-other-border"
@@ -119,8 +131,12 @@ const Register = () => {
                                         </label>
                                         <select
                                             required
+                                            value={gender}
                                             onChange={(e) =>
-                                                setGender(e.target.value)
+                                                setField(
+                                                    "gender",
+                                                    e.target.value
+                                                )
                                             }
                                             name="gender"
                                             className="px-2.5 py-3 rounded-[6px] text-dark-secondary border border-other-border"
@@ -145,7 +161,7 @@ const Register = () => {
                                                 required
                                                 value={phone}
                                                 onChange={(value) =>
-                                                    setPhone(value)
+                                                    setField("phone", value)
                                                 }
                                                 country="id"
                                                 buttonClass="!border-none !bg-light-primary"
@@ -165,8 +181,12 @@ const Register = () => {
                                         </label>
                                         <input
                                             required
+                                            value={password}
                                             onChange={(e) =>
-                                                setPassword(e.target.value)
+                                                setField(
+                                                    "password",
+                                                    e.target.value
+                                                )
                                             }
                                             type="password"
                                             className="px-2.5 py-3 rounded-[6px] border border-other-border"
@@ -182,8 +202,10 @@ const Register = () => {
                                         </label>
                                         <input
                                             required
+                                            value={confirmPassword}
                                             onChange={(e) =>
-                                                setConfirmPassword(
+                                                setField(
+                                                    "confirmPassword",
                                                     e.target.value
                                                 )
                                             }
@@ -206,7 +228,10 @@ const Register = () => {
                             {/* Button Masuk */}
                             <Button
                                 type="button"
-                                action={() => navigate("/login")}
+                                action={() => {
+                                    resetForm();
+                                    navigate("/login");
+                                }}
                                 style="reverse"
                             >
                                 Masuk

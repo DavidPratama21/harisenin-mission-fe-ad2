@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router";
-import Stars from "../atoms/Stars";
+import Stars_rating from "./Stars_rating";
 
-const Card = ({ image, tutor }) => {
+const Card = ({ image, tutor, rating, reviewers }) => {
+    const [interactiveRating, setInteractiveRating] = useState(0);
     return (
         <Link
             to="/detailProduk"
@@ -62,8 +64,12 @@ const Card = ({ image, tutor }) => {
             {/* 4498, Rating & price */}
             <div className="flex justify-between items-center">
                 {/* 4495, rating */}
-                <Stars />
-
+                <Stars_rating
+                    rating={rating}
+                    onRatingChange={setInteractiveRating}
+                    displayOnly={true}
+                    amountRated={reviewers}
+                />
                 <p className="font-semibold text-xl text-primary leading-[120%] sm:text-2xl">
                     Rp 300K
                 </p>

@@ -49,15 +49,15 @@ const Beranda = () => {
 
                         {/* 3837, 3841, 3842, Cards */}
                         <div className="flex flex-col mx-auto gap-5 sm:gap-x-6 sm:gap-y-8 sm:flex-row sm:flex-wrap">
-                            <Card image={card_1} tutor={tutor_1} />
-                            <Card image={card_2} tutor={tutor_2} />
-                            <Card image={card_3} tutor={tutor_3} />
-                            <Card image={card_4} tutor={tutor_4} />
-                            <Card image={card_5} tutor={tutor_5} />
-                            <Card image={card_6} tutor={tutor_6} />
-                            <Card image={card_7} tutor={tutor_7} />
-                            <Card image={card_8} tutor={tutor_8} />
-                            <Card image={card_9} tutor={tutor_3} />
+                            <Card image={card_1} tutor={tutor_1} rating={3} reviewers={86}/>
+                            <Card image={card_2} tutor={tutor_2} rating={4} reviewers={66}/>
+                            <Card image={card_3} tutor={tutor_3} rating={3} reviewers={24}/>
+                            <Card image={card_4} tutor={tutor_4} rating={5} reviewers={43}/>
+                            <Card image={card_5} tutor={tutor_5} rating={4} reviewers={47}/>
+                            <Card image={card_6} tutor={tutor_6} rating={4} reviewers={43}/>
+                            <Card image={card_7} tutor={tutor_7} rating={3} reviewers={23}/>
+                            <Card image={card_8} tutor={tutor_8} rating={3} reviewers={57}/>
+                            <Card image={card_9} tutor={tutor_3} rating={3} reviewers={75}/>
                         </div>
                     </main>
 
